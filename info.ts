@@ -16,7 +16,7 @@ export async function getInfo() {
     } catch (error) {
         console.log(error);
         
-    }
+    } 
    
 }
 
