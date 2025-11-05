@@ -13,6 +13,6 @@ const transport = new WebSocketTransport({
 
 export const subs = new SubscriptionClient({ transport });
 
-subs.clearinghouseState({user},(data) => {
-    console.log("Clearinghouse State:", data);
-});
+// subs.clearinghouseState({user},(data) => {
+//     console.log("Clearinghouse State:", data);
+// });

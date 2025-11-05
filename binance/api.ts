@@ -2,11 +2,11 @@ export const getCandlesFromBinance = async (symbol: string  = "ETH", interval: s
     try {
         let fixedSymbolString
         if (symbol === 'BTC') {
-            fixedSymbolString = 'BTCUSDT'
+            fixedSymbolString = 'BTCUSDC'
         } else if (symbol === 'ETH') {
-            fixedSymbolString = 'ETHUSDT'
+            fixedSymbolString = 'ETHUSDC'
         } else if (symbol === 'SOL') {
-            fixedSymbolString = 'SOLUSDT'
+            fixedSymbolString = 'SOLUSDC'
         }
         const response = await fetch(`https://api.binance.com/api/v3/klines?symbol=${fixedSymbolString}&interval=${interval}&limit=${limit}`);
         const data = await response.json();

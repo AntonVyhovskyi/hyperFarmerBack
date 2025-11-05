@@ -44,7 +44,7 @@ export async function placeStopOrTakeOrder(assetIndex: number = 1, price: number
                 b: isBuy,                         // LONG = true, SHORT = false
                 p: price,                         // ціна
                 s: size,                          // кількість у ETH
-                r: false,                         // reduce-only
+                r: true,                         // reduce-only
                 t: {
                     trigger: { triggerPx: price, isMarket: false, tpsl }
                 },
@@ -81,32 +81,57 @@ export async function cancelAllOrdersByInstrument(numberOfInstrument: number = 1
 
 }
 
-export async function closeAllPositions(instrument:string="ETH", instrumentIndex:number=1) {
+export async function closeAllPositions(instrument: string = "ETH", instrumentIndex: number = 1) {
     try {
         const positions = await getInfo();
         const price = await getMidPrice(instrument);
-        const szi = positions?.assetPositions.find(el=>el.position.coin === instrument)?.position.szi;
+        const szi = positions?.assetPositions.find(el => el.position.coin === instrument)?.position.szi;
         console.log(szi);
-        const sziWithoutMinus = szi?.replace('-','');
+
+
+        if (!szi || Number(szi) === 0) {
+            console.log(`⚠️ Позиції по ${instrument} немає або вона вже закрита.`);
+            return;
+        }
+
+
+
+        const sziWithoutMinus = szi?.replace('-', '');
+        const isLong = Number(szi) > 0;
+        const slipPrice = isLong
+            ? Number(price) * (1 - 0.002) // якщо LONG — продаємо трохи нижче ринку
+            : Number(price) * (1 + 0.002);
+
         if (typeof szi !== 'undefined' && sziWithoutMinus && price) {
             const neededSide = Number(szi) > 0 ? false : true;
             trade.order({
-                orders:[{
+                orders: [{
                     a: instrumentIndex,
                     b: neededSide,
-                    p: Number(price).toFixed(1),
+                    p: slipPrice.toFixed(1),
                     s: sziWithoutMinus,
                     r: true,
-                    t: { limit: { tif: "FrontendMarket" } },
+                    t: { limit: { tif: "Ioc" } },
                     c: "0x" + crypto.randomBytes(16).toString("hex")
                 }]
             })
         }
-        
+
     } catch (err) {
-        console.log(err); 
-        
+        console.log(err);
+
     }
 }
 
+
+export async function changeLavarage(instrumentIndex: number = 1, newLavarage: number = 3) {
+    try {
+        const res = await trade.updateLeverage({ asset: instrumentIndex, isCross: true, leverage: newLavarage });
+        console.log(res);
+
+    } catch (error) {
+        console.log(error);
+    }
+
+}
 

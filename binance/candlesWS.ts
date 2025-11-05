@@ -1,13 +1,13 @@
 import WebSocket from 'ws';
 
-export function subscribeBinanceCandlesWS(symbol: string, interval: string, onClose: (candle: number[]) => void) {
+export function subscribeBinanceCandlesWS(symbol: string, interval: string, onClose: (candle: string[]) => void) {
     let fixedSymbolString
     if (symbol === 'BTC') {
-        fixedSymbolString = 'btcusdt'
+        fixedSymbolString = 'btcusdc'
     } else if (symbol === 'ETH') {
-        fixedSymbolString = 'ethusdt'
+        fixedSymbolString = 'ethusdc'
     } else if (symbol === 'SOL') {
-        fixedSymbolString = 'solusdt'
+        fixedSymbolString = 'solusdc'
     }
     const wsUrl = `wss://fstream.binance.com/ws/${fixedSymbolString}@kline_${interval}`;
     const ws = new WebSocket(wsUrl);
