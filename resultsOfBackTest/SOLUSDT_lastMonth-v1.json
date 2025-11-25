@@ -1,0 +1,80 @@
+{
+	"symbol": "SOLUSDT",
+	"interval": "3m",
+	"params": {
+		"rsiPeriod": 14,
+		"adxPeriod": 21,
+		"rsiBuy": 20,
+		"rsiSell": 80,
+		"adxThreshold": 20,
+		"slPercent": 1,
+		"tpPercent": 2
+	},
+	"result": {
+		"balanceStart": 1000,
+		"balanceEnd": 970.01,
+		"trades": [
+			{
+				"type": "short",
+				"entryTime": 1760457420000,
+				"exitTime": 1760458859999,
+				"entryPrice": 202.22,
+				"exitPrice": 204.2422,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1760932260000,
+				"exitTime": 1760937839999,
+				"entryPrice": 190.78,
+				"exitPrice": 192.6878,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1762183620000,
+				"exitTime": 1762183979999,
+				"entryPrice": 167.83,
+				"exitPrice": 166.1517,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1762767540000,
+				"exitTime": 1762782299999,
+				"entryPrice": 168.78,
+				"exitPrice": 170.4678,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1762823880000,
+				"exitTime": 1762825139999,
+				"entryPrice": 170.55,
+				"exitPrice": 167.139,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1762836840000,
+				"exitTime": 1762841159999,
+				"entryPrice": 166.62,
+				"exitPrice": 164.9538,
+				"profitPct": -1,
+				"result": "loss"
+			}
+		],
+		"summary": {
+			"total": 6,
+			"wins": 1,
+			"losses": 5,
+			"winRate": 16.67,
+			"profitPct": -3
+		}
+	}
+}

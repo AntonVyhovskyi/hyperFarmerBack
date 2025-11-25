@@ -1,0 +1,3455 @@
+{
+	"symbol": "SOLUSDT",
+	"interval": "3m",
+	"params": {
+		"rsiPeriod": 14,
+		"adxPeriod": 21,
+		"rsiBuy": 25,
+		"rsiSell": 76,
+		"adxThreshold": 20,
+		"slPercent": 1,
+		"tpPercent": 2
+	},
+	"result": {
+		"balanceStart": 1000,
+		"balanceEnd": 1116.95,
+		"trades": [
+			{
+				"type": "short",
+				"entryTime": 1731505140000,
+				"exitTime": 1731505499999,
+				"entryPrice": 212.42,
+				"exitPrice": 214.5442,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1731505500000,
+				"exitTime": 1731506579999,
+				"entryPrice": 215,
+				"exitPrice": 210.7,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1731556620000,
+				"exitTime": 1731575519999,
+				"entryPrice": 219.44,
+				"exitPrice": 221.6344,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1731681360000,
+				"exitTime": 1731683519999,
+				"entryPrice": 210.73,
+				"exitPrice": 208.62269999999998,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1731797640000,
+				"exitTime": 1731806639999,
+				"entryPrice": 214.58,
+				"exitPrice": 218.87160000000003,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1731873780000,
+				"exitTime": 1731881159999,
+				"entryPrice": 236.97,
+				"exitPrice": 232.23059999999998,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1731901860000,
+				"exitTime": 1731923999999,
+				"entryPrice": 243.1,
+				"exitPrice": 245.531,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1731926160000,
+				"exitTime": 1731930119999,
+				"entryPrice": 247.64,
+				"exitPrice": 242.6872,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1731985920000,
+				"exitTime": 1732007159999,
+				"entryPrice": 243.09,
+				"exitPrice": 245.5209,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1732090500000,
+				"exitTime": 1732101299999,
+				"entryPrice": 237.86,
+				"exitPrice": 234.93,
+				"profitPct": 1.2318170352308109,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1732101120000,
+				"exitTime": 1732111379999,
+				"entryPrice": 234.93,
+				"exitPrice": 239.6286,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1732154940000,
+				"exitTime": 1732156019999,
+				"entryPrice": 234.53,
+				"exitPrice": 232.1847,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1732245300000,
+				"exitTime": 1732270319999,
+				"entryPrice": 262.71,
+				"exitPrice": 257.45579999999995,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1732281480000,
+				"exitTime": 1732282199999,
+				"entryPrice": 255.61,
+				"exitPrice": 253.0539,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1732334940000,
+				"exitTime": 1732336019999,
+				"entryPrice": 258.94,
+				"exitPrice": 261.5294,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1732410000000,
+				"exitTime": 1732440239999,
+				"entryPrice": 258.93,
+				"exitPrice": 253.7514,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1732644900000,
+				"exitTime": 1732645979999,
+				"entryPrice": 227.09,
+				"exitPrice": 224.8191,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1732684500000,
+				"exitTime": 1732692779999,
+				"entryPrice": 228.53,
+				"exitPrice": 233.10060000000001,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1732788000000,
+				"exitTime": 1732847399999,
+				"entryPrice": 235.11,
+				"exitPrice": 239.81220000000002,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1732926780000,
+				"exitTime": 1732978799999,
+				"entryPrice": 241.42,
+				"exitPrice": 239.0058,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1733042340000,
+				"exitTime": 1733073479999,
+				"entryPrice": 237.57,
+				"exitPrice": 236.46,
+				"profitPct": 0.46723071094834584,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1733073300000,
+				"exitTime": 1733108219999,
+				"entryPrice": 236.46,
+				"exitPrice": 234.0954,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1733251500000,
+				"exitTime": 1733256359999,
+				"entryPrice": 227.2,
+				"exitPrice": 229.47199999999998,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1733314320000,
+				"exitTime": 1733320439999,
+				"entryPrice": 233.29,
+				"exitPrice": 230.9571,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1733379480000,
+				"exitTime": 1733387399999,
+				"entryPrice": 231.61,
+				"exitPrice": 236.24220000000003,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1733425200000,
+				"exitTime": 1733428079999,
+				"entryPrice": 235.63,
+				"exitPrice": 233.2737,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1733563440000,
+				"exitTime": 1733582339999,
+				"entryPrice": 238.36,
+				"exitPrice": 240.74360000000001,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1733582340000,
+				"exitTime": 1733632919999,
+				"entryPrice": 241.27,
+				"exitPrice": 238.78,
+				"profitPct": 1.032038794711323,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1733632740000,
+				"exitTime": 1733645879999,
+				"entryPrice": 238.78,
+				"exitPrice": 236.3922,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1733670360000,
+				"exitTime": 1733708699999,
+				"entryPrice": 234.58,
+				"exitPrice": 232.23420000000002,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1733800320000,
+				"exitTime": 1733802119999,
+				"entryPrice": 208.97,
+				"exitPrice": 213.1494,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1733960880000,
+				"exitTime": 1733974199999,
+				"entryPrice": 226.89,
+				"exitPrice": 231.4278,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1734031620000,
+				"exitTime": 1734032339999,
+				"entryPrice": 229.66,
+				"exitPrice": 227.36339999999998,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1734052860000,
+				"exitTime": 1734100199999,
+				"entryPrice": 224.41,
+				"exitPrice": 222.1659,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1734156900000,
+				"exitTime": 1734179759999,
+				"entryPrice": 227.17,
+				"exitPrice": 222.6266,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1734219000000,
+				"exitTime": 1734248159999,
+				"entryPrice": 220.85,
+				"exitPrice": 216.433,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1734486660000,
+				"exitTime": 1734494579999,
+				"entryPrice": 219.25,
+				"exitPrice": 217.0575,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1734552360000,
+				"exitTime": 1734552719999,
+				"entryPrice": 206.96,
+				"exitPrice": 211.09920000000002,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1734757200000,
+				"exitTime": 1734760799999,
+				"entryPrice": 196.9,
+				"exitPrice": 198.869,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1734843780000,
+				"exitTime": 1734848819999,
+				"entryPrice": 179.3,
+				"exitPrice": 182.88600000000002,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1734905160000,
+				"exitTime": 1734908759999,
+				"entryPrice": 178.05,
+				"exitPrice": 181.61100000000002,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1734924240000,
+				"exitTime": 1734925679999,
+				"entryPrice": 184.27,
+				"exitPrice": 186.11270000000002,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1734944760000,
+				"exitTime": 1734960779999,
+				"entryPrice": 186.33,
+				"exitPrice": 182.60340000000002,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1734981480000,
+				"exitTime": 1734987419999,
+				"entryPrice": 189.06,
+				"exitPrice": 190.9506,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1735006500000,
+				"exitTime": 1735014239999,
+				"entryPrice": 186.49,
+				"exitPrice": 190.21980000000002,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1735070400000,
+				"exitTime": 1735088939999,
+				"entryPrice": 194.52,
+				"exitPrice": 198.4104,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1735136280000,
+				"exitTime": 1735186679999,
+				"entryPrice": 198.69,
+				"exitPrice": 194.7162,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1735310160000,
+				"exitTime": 1735312859999,
+				"entryPrice": 187.1,
+				"exitPrice": 185.22899999999998,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1735539660000,
+				"exitTime": 1735564679999,
+				"entryPrice": 193.46,
+				"exitPrice": 191.2,
+				"profitPct": 1.1682001447327712,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1735564500000,
+				"exitTime": 1735566659999,
+				"entryPrice": 191.2,
+				"exitPrice": 189.28799999999998,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1735633440000,
+				"exitTime": 1735638479999,
+				"entryPrice": 192.3,
+				"exitPrice": 194.223,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1735666380000,
+				"exitTime": 1735673939999,
+				"entryPrice": 195.49,
+				"exitPrice": 193.5351,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1735839900000,
+				"exitTime": 1735860779999,
+				"entryPrice": 205.16,
+				"exitPrice": 208.19,
+				"profitPct": 1.4768960811074288,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1735860600000,
+				"exitTime": 1735895519999,
+				"entryPrice": 208.19,
+				"exitPrice": 210.2719,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1735895520000,
+				"exitTime": 1735905239999,
+				"entryPrice": 211.92,
+				"exitPrice": 214.0392,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1736031420000,
+				"exitTime": 1736064539999,
+				"entryPrice": 217.2,
+				"exitPrice": 215.66,
+				"profitPct": 0.7090239410681363,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1736064360000,
+				"exitTime": 1736070839999,
+				"entryPrice": 215.66,
+				"exitPrice": 213.5034,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1736196300000,
+				"exitTime": 1736225999999,
+				"entryPrice": 218.39,
+				"exitPrice": 216.2061,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1736243100000,
+				"exitTime": 1736260739999,
+				"entryPrice": 214.86,
+				"exitPrice": 212.7114,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1736261820000,
+				"exitTime": 1736262179999,
+				"entryPrice": 211.64,
+				"exitPrice": 209.5236,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1736335800000,
+				"exitTime": 1736348939999,
+				"entryPrice": 195.4,
+				"exitPrice": 199.30800000000002,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1736355960000,
+				"exitTime": 1736357039999,
+				"entryPrice": 192.65,
+				"exitPrice": 190.7235,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1736388540000,
+				"exitTime": 1736396279999,
+				"entryPrice": 195.75,
+				"exitPrice": 193.7925,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1736515800000,
+				"exitTime": 1736516339999,
+				"entryPrice": 188.54,
+				"exitPrice": 186.6546,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1736531460000,
+				"exitTime": 1736531999999,
+				"entryPrice": 189.91,
+				"exitPrice": 191.8091,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1736559900000,
+				"exitTime": 1736592119999,
+				"entryPrice": 185.94,
+				"exitPrice": 184.0806,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1736778780000,
+				"exitTime": 1736779139999,
+				"entryPrice": 169.36,
+				"exitPrice": 172.74720000000002,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1736801100000,
+				"exitTime": 1736806139999,
+				"entryPrice": 181.01,
+				"exitPrice": 182.8201,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1736895240000,
+				"exitTime": 1736925839999,
+				"entryPrice": 188.75,
+				"exitPrice": 190.6375,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1736947800000,
+				"exitTime": 1736948699999,
+				"entryPrice": 192.56,
+				"exitPrice": 194.4856,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1737015660000,
+				"exitTime": 1737017459999,
+				"entryPrice": 201.59,
+				"exitPrice": 199.57410000000002,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1737066600000,
+				"exitTime": 1737077759999,
+				"entryPrice": 208.97,
+				"exitPrice": 213.1494,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1737077760000,
+				"exitTime": 1737104579999,
+				"entryPrice": 214.27,
+				"exitPrice": 216.4127,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1737135720000,
+				"exitTime": 1737168839999,
+				"entryPrice": 217.15,
+				"exitPrice": 221.49300000000002,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1737243000000,
+				"exitTime": 1737243719999,
+				"entryPrice": 261.37,
+				"exitPrice": 263.9837,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1737283320000,
+				"exitTime": 1737284939999,
+				"entryPrice": 288.3,
+				"exitPrice": 291.183,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1737476280000,
+				"exitTime": 1737482759999,
+				"entryPrice": 247.26,
+				"exitPrice": 249.7326,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1737482760000,
+				"exitTime": 1737484379999,
+				"entryPrice": 250.91,
+				"exitPrice": 253.4191,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1737500400000,
+				"exitTime": 1737508859999,
+				"entryPrice": 248.8,
+				"exitPrice": 253.776,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1737574740000,
+				"exitTime": 1737576719999,
+				"entryPrice": 264.3,
+				"exitPrice": 266.94300000000004,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1737628920000,
+				"exitTime": 1737640799999,
+				"entryPrice": 242.68,
+				"exitPrice": 247.5336,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1737659880000,
+				"exitTime": 1737663659999,
+				"entryPrice": 246.6,
+				"exitPrice": 251.532,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1737818460000,
+				"exitTime": 1737827099999,
+				"entryPrice": 254.04,
+				"exitPrice": 256.5804,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1737880380000,
+				"exitTime": 1737888119999,
+				"entryPrice": 255.84,
+				"exitPrice": 253.2816,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1737924660000,
+				"exitTime": 1737926279999,
+				"entryPrice": 253.74,
+				"exitPrice": 251.20260000000002,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1738171980000,
+				"exitTime": 1738177559999,
+				"entryPrice": 230.78,
+				"exitPrice": 226.1644,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1738282320000,
+				"exitTime": 1738314899999,
+				"entryPrice": 237.09,
+				"exitPrice": 234.7191,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1738346220000,
+				"exitTime": 1738348379999,
+				"entryPrice": 235.35,
+				"exitPrice": 232.9965,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1738437840000,
+				"exitTime": 1738440179999,
+				"entryPrice": 223.01,
+				"exitPrice": 220.7799,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1738535940000,
+				"exitTime": 1738536479999,
+				"entryPrice": 195.2,
+				"exitPrice": 199.10399999999998,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1738547460000,
+				"exitTime": 1738547819999,
+				"entryPrice": 185.21,
+				"exitPrice": 183.3579,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1738578960000,
+				"exitTime": 1738587059999,
+				"entryPrice": 200.55,
+				"exitPrice": 196.53900000000002,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1739057940000,
+				"exitTime": 1739071619999,
+				"entryPrice": 200.82,
+				"exitPrice": 202.82819999999998,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1739195100000,
+				"exitTime": 1739195819999,
+				"entryPrice": 206.73,
+				"exitPrice": 208.79729999999998,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1739195820000,
+				"exitTime": 1739198699999,
+				"entryPrice": 208.56,
+				"exitPrice": 204.3888,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1739248740000,
+				"exitTime": 1739253599999,
+				"entryPrice": 203.48,
+				"exitPrice": 205.51479999999998,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1739367000000,
+				"exitTime": 1739367539999,
+				"entryPrice": 192.34,
+				"exitPrice": 190.4166,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1739422260000,
+				"exitTime": 1739429279999,
+				"entryPrice": 195.6,
+				"exitPrice": 193.644,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1739473560000,
+				"exitTime": 1739499119999,
+				"entryPrice": 194.49,
+				"exitPrice": 196.4349,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1739504880000,
+				"exitTime": 1739527019999,
+				"entryPrice": 197.29,
+				"exitPrice": 199.2629,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1739614140000,
+				"exitTime": 1739692619999,
+				"entryPrice": 194.42,
+				"exitPrice": 192.4758,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1739740320000,
+				"exitTime": 1739767499999,
+				"entryPrice": 186.54,
+				"exitPrice": 184.6746,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1740143520000,
+				"exitTime": 1740148919999,
+				"entryPrice": 180.45,
+				"exitPrice": 176.84099999999998,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1740409560000,
+				"exitTime": 1740410999999,
+				"entryPrice": 153.17,
+				"exitPrice": 151.6383,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1740434400000,
+				"exitTime": 1740435119999,
+				"entryPrice": 145.42,
+				"exitPrice": 143.96579999999997,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1740468240000,
+				"exitTime": 1740468599999,
+				"entryPrice": 133.16,
+				"exitPrice": 135.82319999999999,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1740484260000,
+				"exitTime": 1740490739999,
+				"entryPrice": 140.5,
+				"exitPrice": 137.69,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1740513240000,
+				"exitTime": 1740521159999,
+				"entryPrice": 145,
+				"exitPrice": 146.45,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1740555540000,
+				"exitTime": 1740570119999,
+				"entryPrice": 139.63,
+				"exitPrice": 138.2337,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1740570120000,
+				"exitTime": 1740573899999,
+				"entryPrice": 138.49,
+				"exitPrice": 137.10510000000002,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1740668400000,
+				"exitTime": 1740670919999,
+				"entryPrice": 136.53,
+				"exitPrice": 139.2606,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1740684600000,
+				"exitTime": 1740706019999,
+				"entryPrice": 136.01,
+				"exitPrice": 134.6499,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1740793860000,
+				"exitTime": 1740794219999,
+				"entryPrice": 149.58,
+				"exitPrice": 151.07580000000002,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1740824460000,
+				"exitTime": 1740827519999,
+				"entryPrice": 141.28,
+				"exitPrice": 139.8672,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1740865860000,
+				"exitTime": 1740873599999,
+				"entryPrice": 142.37,
+				"exitPrice": 143.7937,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1740982680000,
+				"exitTime": 1740983759999,
+				"entryPrice": 167.54,
+				"exitPrice": 165.8646,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1741052520000,
+				"exitTime": 1741052879999,
+				"entryPrice": 136.79,
+				"exitPrice": 135.4221,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1741123620000,
+				"exitTime": 1741129019999,
+				"entryPrice": 146.62,
+				"exitPrice": 143.6876,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1741225500000,
+				"exitTime": 1741230899999,
+				"entryPrice": 148.81,
+				"exitPrice": 150.2981,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1741250700000,
+				"exitTime": 1741258259999,
+				"entryPrice": 151.19,
+				"exitPrice": 152.7019,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1741280400000,
+				"exitTime": 1741286699999,
+				"entryPrice": 144.09,
+				"exitPrice": 142.6491,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1741306680000,
+				"exitTime": 1741307039999,
+				"entryPrice": 139.87,
+				"exitPrice": 138.4713,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1741307040000,
+				"exitTime": 1741307939999,
+				"entryPrice": 137.89,
+				"exitPrice": 136.5111,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1741325040000,
+				"exitTime": 1741331519999,
+				"entryPrice": 143.15,
+				"exitPrice": 144.5815,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1741373280000,
+				"exitTime": 1741373639999,
+				"entryPrice": 147.62,
+				"exitPrice": 149.0962,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1741471920000,
+				"exitTime": 1741498019999,
+				"entryPrice": 136.57,
+				"exitPrice": 139.3014,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1741598460000,
+				"exitTime": 1741600439999,
+				"entryPrice": 131.01,
+				"exitPrice": 128.38979999999998,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1741607640000,
+				"exitTime": 1741613579999,
+				"entryPrice": 130.03,
+				"exitPrice": 127.4294,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1741693320000,
+				"exitTime": 1741697279999,
+				"entryPrice": 125.78,
+				"exitPrice": 123.2644,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1741698360000,
+				"exitTime": 1741699799999,
+				"entryPrice": 122.21,
+				"exitPrice": 124.65419999999999,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1741960260000,
+				"exitTime": 1741963139999,
+				"entryPrice": 129.01,
+				"exitPrice": 130.3001,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1741983660000,
+				"exitTime": 1741989779999,
+				"entryPrice": 132.4,
+				"exitPrice": 135.048,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1742041620000,
+				"exitTime": 1742045939999,
+				"entryPrice": 134.19,
+				"exitPrice": 135.5319,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1742109120000,
+				"exitTime": 1742122979999,
+				"entryPrice": 134.17,
+				"exitPrice": 132.82829999999998,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1742141160000,
+				"exitTime": 1742152499999,
+				"entryPrice": 130.61,
+				"exitPrice": 127.99780000000001,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1742172300000,
+				"exitTime": 1742183639999,
+				"entryPrice": 127.63,
+				"exitPrice": 128.9063,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1742192820000,
+				"exitTime": 1742212979999,
+				"entryPrice": 127.21,
+				"exitPrice": 129.7542,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1742293080000,
+				"exitTime": 1742299919999,
+				"entryPrice": 123.96,
+				"exitPrice": 122.7204,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1742465520000,
+				"exitTime": 1742465879999,
+				"entryPrice": 132.37,
+				"exitPrice": 131.0463,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1742552460000,
+				"exitTime": 1742573339999,
+				"entryPrice": 126.55,
+				"exitPrice": 125.2845,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1742581980000,
+				"exitTime": 1742582339999,
+				"entryPrice": 128.39,
+				"exitPrice": 129.67389999999997,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1742634900000,
+				"exitTime": 1742638859999,
+				"entryPrice": 130.22,
+				"exitPrice": 131.5222,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1742649840000,
+				"exitTime": 1742725079999,
+				"entryPrice": 129.37,
+				"exitPrice": 131.9574,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1742854500000,
+				"exitTime": 1742868899999,
+				"entryPrice": 140.7,
+				"exitPrice": 139.29299999999998,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1742997060000,
+				"exitTime": 1742998859999,
+				"entryPrice": 142.01,
+				"exitPrice": 140.5899,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1743195240000,
+				"exitTime": 1743217379999,
+				"entryPrice": 128.18,
+				"exitPrice": 126.8982,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1743228900000,
+				"exitTime": 1743247439999,
+				"entryPrice": 126.5,
+				"exitPrice": 125.235,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1743341400000,
+				"exitTime": 1743360479999,
+				"entryPrice": 123.55,
+				"exitPrice": 126.021,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1743371460000,
+				"exitTime": 1743372539999,
+				"entryPrice": 124.61,
+				"exitPrice": 123.3639,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1743412320000,
+				"exitTime": 1743415919999,
+				"entryPrice": 124.31,
+				"exitPrice": 123.0669,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1743442740000,
+				"exitTime": 1743476399999,
+				"entryPrice": 124.73,
+				"exitPrice": 126.24,
+				"profitPct": 1.2106149282450018,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1743476220000,
+				"exitTime": 1743495119999,
+				"entryPrice": 126.24,
+				"exitPrice": 127.5024,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1743495120000,
+				"exitTime": 1743495659999,
+				"entryPrice": 127.77,
+				"exitPrice": 129.0477,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1743520500000,
+				"exitTime": 1743529679999,
+				"entryPrice": 130,
+				"exitPrice": 127.39999999999999,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1743559740000,
+				"exitTime": 1743598619999,
+				"entryPrice": 124.29,
+				"exitPrice": 126.7758,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1743675840000,
+				"exitTime": 1743676919999,
+				"entryPrice": 116.91,
+				"exitPrice": 115.7409,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1743705720000,
+				"exitTime": 1743717239999,
+				"entryPrice": 115.81,
+				"exitPrice": 116.9681,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1743809220000,
+				"exitTime": 1743820199999,
+				"entryPrice": 122.29,
+				"exitPrice": 121.06710000000001,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1743851520000,
+				"exitTime": 1743858539999,
+				"entryPrice": 120.04,
+				"exitPrice": 118.8396,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1743897240000,
+				"exitTime": 1743942239999,
+				"entryPrice": 120.37,
+				"exitPrice": 117.96260000000001,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1744075980000,
+				"exitTime": 1744076519999,
+				"entryPrice": 109.9,
+				"exitPrice": 110.99900000000001,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1744196580000,
+				"exitTime": 1744198559999,
+				"entryPrice": 104.6,
+				"exitPrice": 103.55399999999999,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1744198920000,
+				"exitTime": 1744205579999,
+				"entryPrice": 103.06,
+				"exitPrice": 105.1212,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1744245360000,
+				"exitTime": 1744254719999,
+				"entryPrice": 117.42,
+				"exitPrice": 116.2458,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1744270380000,
+				"exitTime": 1744283879999,
+				"entryPrice": 114.63,
+				"exitPrice": 113.4837,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1744298640000,
+				"exitTime": 1744299539999,
+				"entryPrice": 111.38,
+				"exitPrice": 110.2662,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1744432200000,
+				"exitTime": 1744439579999,
+				"entryPrice": 122.18,
+				"exitPrice": 123.40180000000001,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1744552260000,
+				"exitTime": 1744561079999,
+				"entryPrice": 127.01,
+				"exitPrice": 129.55020000000002,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1744708500000,
+				"exitTime": 1744726859999,
+				"entryPrice": 133.2,
+				"exitPrice": 130.53599999999997,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1744790940000,
+				"exitTime": 1744804259999,
+				"entryPrice": 123.96,
+				"exitPrice": 126.4392,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1744813980000,
+				"exitTime": 1744817219999,
+				"entryPrice": 127.76,
+				"exitPrice": 129.0376,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1744832880000,
+				"exitTime": 1744856639999,
+				"entryPrice": 133.41,
+				"exitPrice": 130.74179999999998,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1744918020000,
+				"exitTime": 1744938899999,
+				"entryPrice": 132.81,
+				"exitPrice": 135.46620000000001,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1745017560000,
+				"exitTime": 1745028719999,
+				"entryPrice": 133.3,
+				"exitPrice": 135.966,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1745131500000,
+				"exitTime": 1745133659999,
+				"entryPrice": 140.01,
+				"exitPrice": 138.60989999999998,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1745164080000,
+				"exitTime": 1745179739999,
+				"entryPrice": 136.05,
+				"exitPrice": 137.7,
+				"profitPct": 1.212789415655992,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1745179560000,
+				"exitTime": 1745194139999,
+				"entryPrice": 137.7,
+				"exitPrice": 139.077,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1745234460000,
+				"exitTime": 1745243999999,
+				"entryPrice": 138.69,
+				"exitPrice": 137.3031,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1745284680000,
+				"exitTime": 1745322839999,
+				"entryPrice": 139.3,
+				"exitPrice": 140.693,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1745435520000,
+				"exitTime": 1745467019999,
+				"entryPrice": 149.37,
+				"exitPrice": 147.87630000000001,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1745549640000,
+				"exitTime": 1745562599999,
+				"entryPrice": 150.61,
+				"exitPrice": 152.92,
+				"profitPct": 1.533762698359985,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1745562420000,
+				"exitTime": 1745567639999,
+				"entryPrice": 152.92,
+				"exitPrice": 154.4492,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1745603100000,
+				"exitTime": 1745660339999,
+				"entryPrice": 150.53,
+				"exitPrice": 149.0247,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1745944380000,
+				"exitTime": 1745961659999,
+				"entryPrice": 149.67,
+				"exitPrice": 146.67659999999998,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1746085320000,
+				"exitTime": 1746092339999,
+				"entryPrice": 149.92,
+				"exitPrice": 151.4192,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1746123300000,
+				"exitTime": 1746168299999,
+				"entryPrice": 150.2,
+				"exitPrice": 148.69799999999998,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1746289980000,
+				"exitTime": 1746292139999,
+				"entryPrice": 147.68,
+				"exitPrice": 146.2032,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1746439560000,
+				"exitTime": 1746442079999,
+				"entryPrice": 145.7,
+				"exitPrice": 144.243,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1746514800000,
+				"exitTime": 1746519659999,
+				"entryPrice": 145.83,
+				"exitPrice": 143.86,
+				"profitPct": 1.350888020297606,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1746519480000,
+				"exitTime": 1746531179999,
+				"entryPrice": 143.86,
+				"exitPrice": 142.4214,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1746568980000,
+				"exitTime": 1746577439999,
+				"entryPrice": 146.22,
+				"exitPrice": 147.6822,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1746603720000,
+				"exitTime": 1746659339999,
+				"entryPrice": 146.85,
+				"exitPrice": 148.3185,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1746665820000,
+				"exitTime": 1746671579999,
+				"entryPrice": 148.83,
+				"exitPrice": 150.31830000000002,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1746787860000,
+				"exitTime": 1746788219999,
+				"entryPrice": 171.23,
+				"exitPrice": 172.9423,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1746800820000,
+				"exitTime": 1746811979999,
+				"entryPrice": 168.7,
+				"exitPrice": 172.07399999999998,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1746970200000,
+				"exitTime": 1746978659999,
+				"entryPrice": 172.19,
+				"exitPrice": 170.4681,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1747009800000,
+				"exitTime": 1747013939999,
+				"entryPrice": 175.42,
+				"exitPrice": 171.9116,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1747033200000,
+				"exitTime": 1747037159999,
+				"entryPrice": 178.33,
+				"exitPrice": 174.76340000000002,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1747057860000,
+				"exitTime": 1747060199999,
+				"entryPrice": 180.25,
+				"exitPrice": 176.645,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1747071900000,
+				"exitTime": 1747073519999,
+				"entryPrice": 172.49,
+				"exitPrice": 170.76510000000002,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1747152540000,
+				"exitTime": 1747158479999,
+				"entryPrice": 176.96,
+				"exitPrice": 178.7296,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1747268280000,
+				"exitTime": 1747274039999,
+				"entryPrice": 178.13,
+				"exitPrice": 174.5674,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1747384560000,
+				"exitTime": 1747393019999,
+				"entryPrice": 169.74,
+				"exitPrice": 173.1348,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1747520100000,
+				"exitTime": 1747543319999,
+				"entryPrice": 164.72,
+				"exitPrice": 168.0144,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1747543500000,
+				"exitTime": 1747547819999,
+				"entryPrice": 168.31,
+				"exitPrice": 169.9931,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1747959120000,
+				"exitTime": 1747964159999,
+				"entryPrice": 181.1,
+				"exitPrice": 182.911,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1748011680000,
+				"exitTime": 1748017259999,
+				"entryPrice": 182.94,
+				"exitPrice": 179.28119999999998,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1748133720000,
+				"exitTime": 1748134799999,
+				"entryPrice": 173.49,
+				"exitPrice": 171.7551,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1748184300000,
+				"exitTime": 1748211299999,
+				"entryPrice": 170.42,
+				"exitPrice": 173.8284,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1748308320000,
+				"exitTime": 1748332979999,
+				"entryPrice": 172.77,
+				"exitPrice": 176.2254,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1748351700000,
+				"exitTime": 1748356379999,
+				"entryPrice": 178.68,
+				"exitPrice": 175.1064,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1748493540000,
+				"exitTime": 1748527739999,
+				"entryPrice": 171.74,
+				"exitPrice": 170.0226,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1748566260000,
+				"exitTime": 1748566619999,
+				"entryPrice": 164.54,
+				"exitPrice": 162.8946,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1748622600000,
+				"exitTime": 1748629439999,
+				"entryPrice": 157.26,
+				"exitPrice": 160.40519999999998,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1748786940000,
+				"exitTime": 1748794319999,
+				"entryPrice": 153.19,
+				"exitPrice": 154.7219,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1748981700000,
+				"exitTime": 1748982599999,
+				"entryPrice": 158.9,
+				"exitPrice": 157.311,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1749068280000,
+				"exitTime": 1749101219999,
+				"entryPrice": 154.39,
+				"exitPrice": 152.84609999999998,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1749101220000,
+				"exitTime": 1749131639999,
+				"entryPrice": 152.52,
+				"exitPrice": 150.9948,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1749150900000,
+				"exitTime": 1749151259999,
+				"entryPrice": 145.62,
+				"exitPrice": 144.1638,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1749369420000,
+				"exitTime": 1749402179999,
+				"entryPrice": 149.31,
+				"exitPrice": 152.2962,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1749503340000,
+				"exitTime": 1749504599999,
+				"entryPrice": 157.68,
+				"exitPrice": 159.2568,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1749533580000,
+				"exitTime": 1749555719999,
+				"entryPrice": 157.79,
+				"exitPrice": 160.9458,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1749581280000,
+				"exitTime": 1749581639999,
+				"entryPrice": 162.23,
+				"exitPrice": 163.85229999999999,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1749581640000,
+				"exitTime": 1749607919999,
+				"entryPrice": 164.21,
+				"exitPrice": 165.8521,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1749663900000,
+				"exitTime": 1749665879999,
+				"entryPrice": 164.54,
+				"exitPrice": 162.8946,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1750113360000,
+				"exitTime": 1750113899999,
+				"entryPrice": 155.22,
+				"exitPrice": 153.6678,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1750113900000,
+				"exitTime": 1750114259999,
+				"entryPrice": 153.41,
+				"exitPrice": 151.8759,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1750279860000,
+				"exitTime": 1750290299999,
+				"entryPrice": 147.74,
+				"exitPrice": 146.02,
+				"profitPct": 1.1642073913632047,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1750290120000,
+				"exitTime": 1750334939999,
+				"entryPrice": 146.02,
+				"exitPrice": 144.5598,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1750404060000,
+				"exitTime": 1750406759999,
+				"entryPrice": 146.53,
+				"exitPrice": 147.99530000000001,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1750426560000,
+				"exitTime": 1750430699999,
+				"entryPrice": 146.8,
+				"exitPrice": 145.33200000000002,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1750476600000,
+				"exitTime": 1750513679999,
+				"entryPrice": 141.25,
+				"exitPrice": 140.47,
+				"profitPct": 0.5522123893805317,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1750513500000,
+				"exitTime": 1750527359999,
+				"entryPrice": 140.47,
+				"exitPrice": 139.0653,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1750598280000,
+				"exitTime": 1750598999999,
+				"entryPrice": 130.69,
+				"exitPrice": 129.38309999999998,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1750623120000,
+				"exitTime": 1750625639999,
+				"entryPrice": 126.77,
+				"exitPrice": 129.3054,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1750683420000,
+				"exitTime": 1750686299999,
+				"entryPrice": 135.53,
+				"exitPrice": 136.8853,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1750742460000,
+				"exitTime": 1750744979999,
+				"entryPrice": 144.17,
+				"exitPrice": 145.61169999999998,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1750836240000,
+				"exitTime": 1750841279999,
+				"entryPrice": 147.42,
+				"exitPrice": 145.09,
+				"profitPct": 1.5805182471849033,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1750841100000,
+				"exitTime": 1750858199999,
+				"entryPrice": 145.09,
+				"exitPrice": 147.48,
+				"profitPct": 1.6472534289061869,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1750858020000,
+				"exitTime": 1750864679999,
+				"entryPrice": 147.48,
+				"exitPrice": 144.5304,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1750970520000,
+				"exitTime": 1750973039999,
+				"entryPrice": 143.89,
+				"exitPrice": 141.01219999999998,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1750973580000,
+				"exitTime": 1750985099999,
+				"entryPrice": 139.68,
+				"exitPrice": 138.2832,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1751008680000,
+				"exitTime": 1751039639999,
+				"entryPrice": 142.15,
+				"exitPrice": 143.57150000000001,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1751046120000,
+				"exitTime": 1751050439999,
+				"entryPrice": 141.54,
+				"exitPrice": 140.1246,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1751163480000,
+				"exitTime": 1751206859999,
+				"entryPrice": 149.53,
+				"exitPrice": 152.5206,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1751297220000,
+				"exitTime": 1751297579999,
+				"entryPrice": 155.39,
+				"exitPrice": 156.94389999999999,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1751513040000,
+				"exitTime": 1751520779999,
+				"entryPrice": 153.96,
+				"exitPrice": 155.49960000000002,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1751596380000,
+				"exitTime": 1751616539999,
+				"entryPrice": 151.5,
+				"exitPrice": 149.98499999999999,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1751668200000,
+				"exitTime": 1751808239999,
+				"entryPrice": 147.92,
+				"exitPrice": 149.39919999999998,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1751837040000,
+				"exitTime": 1751912279999,
+				"entryPrice": 152.63,
+				"exitPrice": 149.57739999999998,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1751962320000,
+				"exitTime": 1751976719999,
+				"entryPrice": 150.19,
+				"exitPrice": 151.6919,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1752035040000,
+				"exitTime": 1752039359999,
+				"entryPrice": 150.63,
+				"exitPrice": 152.21,
+				"profitPct": 1.0489278364203762,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1752039180000,
+				"exitTime": 1752039899999,
+				"entryPrice": 152.21,
+				"exitPrice": 153.7321,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1752089220000,
+				"exitTime": 1752090839999,
+				"entryPrice": 155.82,
+				"exitPrice": 157.3782,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1752109020000,
+				"exitTime": 1752114419999,
+				"entryPrice": 155.94,
+				"exitPrice": 159.0588,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1752131340000,
+				"exitTime": 1752169679999,
+				"entryPrice": 158.21,
+				"exitPrice": 159.7921,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1752238800000,
+				"exitTime": 1752244199999,
+				"entryPrice": 166.05,
+				"exitPrice": 167.71050000000002,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1752268140000,
+				"exitTime": 1752272819999,
+				"entryPrice": 161.96,
+				"exitPrice": 160.34040000000002,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1752320520000,
+				"exitTime": 1752324119999,
+				"entryPrice": 161.94,
+				"exitPrice": 160.32059999999998,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1752353460000,
+				"exitTime": 1752393599999,
+				"entryPrice": 159.44,
+				"exitPrice": 162.6288,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1752591240000,
+				"exitTime": 1752594479999,
+				"entryPrice": 157.24,
+				"exitPrice": 160.3848,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1752608700000,
+				"exitTime": 1752620579999,
+				"entryPrice": 160.06,
+				"exitPrice": 163.2612,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1752682140000,
+				"exitTime": 1752683039999,
+				"entryPrice": 170.21,
+				"exitPrice": 171.9121,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1752743160000,
+				"exitTime": 1752745319999,
+				"entryPrice": 175.46,
+				"exitPrice": 177.21460000000002,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1752843420000,
+				"exitTime": 1752845759999,
+				"entryPrice": 180.14,
+				"exitPrice": 181.9414,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1752886800000,
+				"exitTime": 1752921719999,
+				"entryPrice": 174.41,
+				"exitPrice": 177.54,
+				"profitPct": 1.7946218680121528,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1752921540000,
+				"exitTime": 1752960059999,
+				"entryPrice": 177.54,
+				"exitPrice": 175.51,
+				"profitPct": 1.1434043032556052,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1752959880000,
+				"exitTime": 1752973739999,
+				"entryPrice": 175.51,
+				"exitPrice": 179.0202,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1752973740000,
+				"exitTime": 1753002179999,
+				"entryPrice": 179.13,
+				"exitPrice": 180.9213,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1753049700000,
+				"exitTime": 1753064999999,
+				"entryPrice": 178.55,
+				"exitPrice": 182.121,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1753613460000,
+				"exitTime": 1753619759999,
+				"entryPrice": 188.33,
+				"exitPrice": 185.59,
+				"profitPct": 1.45489300695588,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1753619580000,
+				"exitTime": 1753633079999,
+				"entryPrice": 185.59,
+				"exitPrice": 188.16,
+				"profitPct": 1.3847728864701725,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1753632900000,
+				"exitTime": 1753654499999,
+				"entryPrice": 188.16,
+				"exitPrice": 190.0416,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1753901820000,
+				"exitTime": 1753902359999,
+				"entryPrice": 175.91,
+				"exitPrice": 174.1509,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1754055900000,
+				"exitTime": 1754057159999,
+				"entryPrice": 166.41,
+				"exitPrice": 164.7459,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1754115300000,
+				"exitTime": 1754116739999,
+				"entryPrice": 163.82,
+				"exitPrice": 162.18179999999998,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1754156880000,
+				"exitTime": 1754158859999,
+				"entryPrice": 159.61,
+				"exitPrice": 158.0139,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1754219340000,
+				"exitTime": 1754268479999,
+				"entryPrice": 162.51,
+				"exitPrice": 164.1351,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1754324640000,
+				"exitTime": 1754327519999,
+				"entryPrice": 167.82,
+				"exitPrice": 169.4982,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1754386920000,
+				"exitTime": 1754389799999,
+				"entryPrice": 168.87,
+				"exitPrice": 170.55870000000002,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1754457300000,
+				"exitTime": 1754489339999,
+				"entryPrice": 163.95,
+				"exitPrice": 165.5895,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1754561340000,
+				"exitTime": 1754562779999,
+				"entryPrice": 170.57,
+				"exitPrice": 172.2757,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1754584920000,
+				"exitTime": 1754596979999,
+				"entryPrice": 168.58,
+				"exitPrice": 171.9516,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1754786340000,
+				"exitTime": 1754789939999,
+				"entryPrice": 182.06,
+				"exitPrice": 183.88060000000002,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1754803080000,
+				"exitTime": 1754806679999,
+				"entryPrice": 183.27,
+				"exitPrice": 181.43730000000002,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1754836920000,
+				"exitTime": 1754861219999,
+				"entryPrice": 182.03,
+				"exitPrice": 183.8503,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1754878500000,
+				"exitTime": 1754910359999,
+				"entryPrice": 185.04,
+				"exitPrice": 181.33919999999998,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1755001800000,
+				"exitTime": 1755011159999,
+				"entryPrice": 178.22,
+				"exitPrice": 180.0022,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1755045360000,
+				"exitTime": 1755052919999,
+				"entryPrice": 194.5,
+				"exitPrice": 196.445,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1755139860000,
+				"exitTime": 1755143459999,
+				"entryPrice": 206.93,
+				"exitPrice": 208.9993,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1755174600000,
+				"exitTime": 1755174959999,
+				"entryPrice": 198.22,
+				"exitPrice": 196.2378,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1755250020000,
+				"exitTime": 1755260459999,
+				"entryPrice": 195,
+				"exitPrice": 193.05,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1755298260000,
+				"exitTime": 1755329759999,
+				"entryPrice": 187.33,
+				"exitPrice": 189.2033,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1755398340000,
+				"exitTime": 1755403739999,
+				"entryPrice": 190.57,
+				"exitPrice": 192.4757,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1755475380000,
+				"exitTime": 1755480599999,
+				"entryPrice": 190.54,
+				"exitPrice": 188.63459999999998,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1755538200000,
+				"exitTime": 1755563579999,
+				"entryPrice": 185.36,
+				"exitPrice": 181.6528,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1755689400000,
+				"exitTime": 1755701639999,
+				"entryPrice": 178.95,
+				"exitPrice": 182.529,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1755767160000,
+				"exitTime": 1755790379999,
+				"entryPrice": 184.56,
+				"exitPrice": 182.7144,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1756030680000,
+				"exitTime": 1756033379999,
+				"entryPrice": 206.5,
+				"exitPrice": 204.435,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1756149300000,
+				"exitTime": 1756151999999,
+				"entryPrice": 193.13,
+				"exitPrice": 191.1987,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1756211580000,
+				"exitTime": 1756212479999,
+				"entryPrice": 189.99,
+				"exitPrice": 191.8899,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1756261260000,
+				"exitTime": 1756266659999,
+				"entryPrice": 198.9,
+				"exitPrice": 200.889,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1756318860000,
+				"exitTime": 1756321739999,
+				"entryPrice": 211.6,
+				"exitPrice": 207.368,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1756368000000,
+				"exitTime": 1756387979999,
+				"entryPrice": 214.62,
+				"exitPrice": 216.7662,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1756400220000,
+				"exitTime": 1756405799999,
+				"entryPrice": 207.43,
+				"exitPrice": 211.57860000000002,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1756470600000,
+				"exitTime": 1756475279999,
+				"entryPrice": 212.21,
+				"exitPrice": 207.9658,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1756483020000,
+				"exitTime": 1756487879999,
+				"entryPrice": 204.46,
+				"exitPrice": 202.4154,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1756524060000,
+				"exitTime": 1756546379999,
+				"entryPrice": 206.18,
+				"exitPrice": 202.0564,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1756652400000,
+				"exitTime": 1756685159999,
+				"entryPrice": 204.27,
+				"exitPrice": 200.18460000000002,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1756759320000,
+				"exitTime": 1756763819999,
+				"entryPrice": 196.51,
+				"exitPrice": 194.54489999999998,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1756953000000,
+				"exitTime": 1756963439999,
+				"entryPrice": 207.96,
+				"exitPrice": 205.8804,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1757207160000,
+				"exitTime": 1757233619999,
+				"entryPrice": 201.65,
+				"exitPrice": 203.6665,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1757259360000,
+				"exitTime": 1757285459999,
+				"entryPrice": 204.76,
+				"exitPrice": 206.80759999999998,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1757489040000,
+				"exitTime": 1757507579999,
+				"entryPrice": 220.73,
+				"exitPrice": 222.9373,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1757581560000,
+				"exitTime": 1757592719999,
+				"entryPrice": 224.65,
+				"exitPrice": 226.8965,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1757629440000,
+				"exitTime": 1757637899999,
+				"entryPrice": 228.29,
+				"exitPrice": 230.5729,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1757715300000,
+				"exitTime": 1757771459999,
+				"entryPrice": 243.54,
+				"exitPrice": 239.51,
+				"profitPct": 1.6547589718321432,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1757771280000,
+				"exitTime": 1757782979999,
+				"entryPrice": 239.51,
+				"exitPrice": 237.11489999999998,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1757850120000,
+				"exitTime": 1757860019999,
+				"entryPrice": 245.6,
+				"exitPrice": 243.144,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1757917980000,
+				"exitTime": 1757921579999,
+				"entryPrice": 241.18,
+				"exitPrice": 238.7682,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1757996100000,
+				"exitTime": 1758002579999,
+				"entryPrice": 233.14,
+				"exitPrice": 236.89,
+				"profitPct": 1.608475594063653,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1758002400000,
+				"exitTime": 1758030479999,
+				"entryPrice": 236.89,
+				"exitPrice": 232.1522,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1758030480000,
+				"exitTime": 1758037679999,
+				"entryPrice": 231.62,
+				"exitPrice": 236.25240000000002,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1758067920000,
+				"exitTime": 1758084659999,
+				"entryPrice": 235.98,
+				"exitPrice": 233.62019999999998,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1758173760000,
+				"exitTime": 1758214259999,
+				"entryPrice": 244.56,
+				"exitPrice": 249.4512,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1758215160000,
+				"exitTime": 1758223979999,
+				"entryPrice": 251.99,
+				"exitPrice": 247.92,
+				"profitPct": 1.6151434580737416,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1758223800000,
+				"exitTime": 1758253859999,
+				"entryPrice": 247.92,
+				"exitPrice": 245.4408,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1758324420000,
+				"exitTime": 1758426839999,
+				"entryPrice": 236.95,
+				"exitPrice": 241.689,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1758501000000,
+				"exitTime": 1758520619999,
+				"entryPrice": 232.8,
+				"exitPrice": 230.472,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1758546360000,
+				"exitTime": 1758560579999,
+				"entryPrice": 223.47,
+				"exitPrice": 219.0006,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1758589920000,
+				"exitTime": 1758594419999,
+				"entryPrice": 218.4,
+				"exitPrice": 216.216,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1758832560000,
+				"exitTime": 1758840479999,
+				"entryPrice": 196.09,
+				"exitPrice": 194.1291,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1758993480000,
+				"exitTime": 1759009319999,
+				"entryPrice": 201.21,
+				"exitPrice": 203.55,
+				"profitPct": 1.1629640673922783,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1759009140000,
+				"exitTime": 1759059539999,
+				"entryPrice": 203.55,
+				"exitPrice": 199.479,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1759067640000,
+				"exitTime": 1759074659999,
+				"entryPrice": 201.19,
+				"exitPrice": 203.2019,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1759142340000,
+				"exitTime": 1759151159999,
+				"entryPrice": 206.83,
+				"exitPrice": 204.76170000000002,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1759172940000,
+				"exitTime": 1759176719999,
+				"entryPrice": 211.76,
+				"exitPrice": 213.8776,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1759217760000,
+				"exitTime": 1759223159999,
+				"entryPrice": 209.05,
+				"exitPrice": 206.95950000000002,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1759278960000,
+				"exitTime": 1759307399999,
+				"entryPrice": 207.01,
+				"exitPrice": 211.15019999999998,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1759460760000,
+				"exitTime": 1759470299999,
+				"entryPrice": 234.12,
+				"exitPrice": 230.39,
+				"profitPct": 1.5932000683410295,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1759470120000,
+				"exitTime": 1759474439999,
+				"entryPrice": 230.39,
+				"exitPrice": 228.0861,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1759474440000,
+				"exitTime": 1759505759999,
+				"entryPrice": 228.96,
+				"exitPrice": 233.53920000000002,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1759589820000,
+				"exitTime": 1759591799999,
+				"entryPrice": 226.82,
+				"exitPrice": 224.5518,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1759631400000,
+				"exitTime": 1759639679999,
+				"entryPrice": 230.37,
+				"exitPrice": 232.6737,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1759657320000,
+				"exitTime": 1759670639999,
+				"entryPrice": 232.99,
+				"exitPrice": 230.6601,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1759687740000,
+				"exitTime": 1759719059999,
+				"entryPrice": 228.09,
+				"exitPrice": 232.6518,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1759844700000,
+				"exitTime": 1759846319999,
+				"entryPrice": 227.08,
+				"exitPrice": 224.8092,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1759931100000,
+				"exitTime": 1759932179999,
+				"entryPrice": 219.46,
+				"exitPrice": 223.84920000000002,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1759943340000,
+				"exitTime": 1759944779999,
+				"entryPrice": 224.61,
+				"exitPrice": 226.85610000000003,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1760079600000,
+				"exitTime": 1760103539999,
+				"entryPrice": 219.03,
+				"exitPrice": 223.41060000000002,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1760210280000,
+				"exitTime": 1760212439999,
+				"entryPrice": 178.82,
+				"exitPrice": 177.0318,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1760228820000,
+				"exitTime": 1760230619999,
+				"entryPrice": 175.02,
+				"exitPrice": 173.2698,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1760451300000,
+				"exitTime": 1760454899999,
+				"entryPrice": 198.7,
+				"exitPrice": 194.726,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1760457060000,
+				"exitTime": 1760458859999,
+				"entryPrice": 201.75,
+				"exitPrice": 203.7675,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1760470920000,
+				"exitTime": 1760479379999,
+				"entryPrice": 197.92,
+				"exitPrice": 201.8784,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1760516280000,
+				"exitTime": 1760527079999,
+				"entryPrice": 207.53,
+				"exitPrice": 203.3794,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1760624100000,
+				"exitTime": 1760625719999,
+				"entryPrice": 192.15,
+				"exitPrice": 195.99300000000002,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1760855760000,
+				"exitTime": 1760864759999,
+				"entryPrice": 185.19,
+				"exitPrice": 183.3381,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1760932080000,
+				"exitTime": 1760932619999,
+				"entryPrice": 189.81,
+				"exitPrice": 191.7081,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1760958180000,
+				"exitTime": 1760976179999,
+				"entryPrice": 191.24,
+				"exitPrice": 189.32760000000002,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1761042780000,
+				"exitTime": 1761055919999,
+				"entryPrice": 186.12,
+				"exitPrice": 187.9812,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1761077700000,
+				"exitTime": 1761081839999,
+				"entryPrice": 191.49,
+				"exitPrice": 189.57510000000002,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1761226380000,
+				"exitTime": 1761228899999,
+				"entryPrice": 192.46,
+				"exitPrice": 188.6108,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1761470640000,
+				"exitTime": 1761479099999,
+				"entryPrice": 195.43,
+				"exitPrice": 197.3843,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1761733440000,
+				"exitTime": 1761736859999,
+				"entryPrice": 196.26,
+				"exitPrice": 198.2226,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1761752700000,
+				"exitTime": 1761755579999,
+				"entryPrice": 196.75,
+				"exitPrice": 194.7825,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1761781140000,
+				"exitTime": 1761791579999,
+				"entryPrice": 193.11,
+				"exitPrice": 196.97220000000002,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1761815880000,
+				"exitTime": 1761826679999,
+				"entryPrice": 192.89,
+				"exitPrice": 190.9611,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1761929280000,
+				"exitTime": 1761940079999,
+				"entryPrice": 185.25,
+				"exitPrice": 188.955,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1762004520000,
+				"exitTime": 1762058699999,
+				"entryPrice": 185.1,
+				"exitPrice": 186.82,
+				"profitPct": 0.9292274446245266,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1762058520000,
+				"exitTime": 1762100099999,
+				"entryPrice": 186.82,
+				"exitPrice": 183.0836,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "short",
+				"entryTime": 1762117200000,
+				"exitTime": 1762126919999,
+				"entryPrice": 184.97,
+				"exitPrice": 186.8197,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1762183440000,
+				"exitTime": 1762183799999,
+				"entryPrice": 172.52,
+				"exitPrice": 170.7948,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1762231140000,
+				"exitTime": 1762233479999,
+				"entryPrice": 165.27,
+				"exitPrice": 163.6173,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1762330860000,
+				"exitTime": 1762333919999,
+				"entryPrice": 154.01,
+				"exitPrice": 157.09019999999998,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1762406100000,
+				"exitTime": 1762413479999,
+				"entryPrice": 159.99,
+				"exitPrice": 158.39010000000002,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "long",
+				"entryTime": 1762488540000,
+				"exitTime": 1762508699999,
+				"entryPrice": 155.84,
+				"exitPrice": 154.2816,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1762714620000,
+				"exitTime": 1762716779999,
+				"entryPrice": 163.99,
+				"exitPrice": 165.62990000000002,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1762767180000,
+				"exitTime": 1762781939999,
+				"entryPrice": 168.55,
+				"exitPrice": 170.2355,
+				"profitPct": -1,
+				"result": "loss"
+			},
+			{
+				"type": "short",
+				"entryTime": 1762823880000,
+				"exitTime": 1762825139999,
+				"entryPrice": 170.55,
+				"exitPrice": 167.139,
+				"profitPct": 2,
+				"result": "win"
+			},
+			{
+				"type": "long",
+				"entryTime": 1762836300000,
+				"exitTime": 1762837559999,
+				"entryPrice": 167.47,
+				"exitPrice": 165.7953,
+				"profitPct": -1,
+				"result": "loss"
+			}
+		],
+		"summary": {
+			"total": 381,
+			"wins": 138,
+			"losses": 243,
+			"winRate": 36.22,
+			"profitPct": 11.7
+		}
+	}
+}

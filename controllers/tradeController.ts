@@ -29,20 +29,38 @@ let userInfo = {
 const subscribtions: any = {}
 const user = process.env.USER_ADDRESS || "";
 const balanceAndPosSubsribes: any = {}
+
+
+const hlStarting: Record<string, boolean> = {};
+
 export const tradeControllerStart = async (req: Request, res: Response) => {
 
     if (balanceAndPosSubsribes[user]) {
         return res.status(400).send("Trade already started");
     }
 
-    balanceAndPosSubsribes[user] = await balanceAndPositionsWS.clearinghouseState({ user }, (data) => {
-        userInfo.balance = Number(data.clearinghouseState.crossMarginSummary.accountValue);
-        userInfo.position = Number(data.clearinghouseState.assetPositions.find((pos) => pos.position.coin === params.coin.name)?.position.szi) || 0;
-
-       
+    if (hlStarting[user]) {
+        return res.status(409).send("HL subscription is already starting");
+    }
 
 
-    })
+
+    hlStarting[user] = true;
+    try {
+        balanceAndPosSubsribes[user] = await balanceAndPositionsWS.clearinghouseState({ user }, (data) => {
+            userInfo.balance = Number(data.clearinghouseState.crossMarginSummary.accountValue);
+            userInfo.position = Number(
+                data.clearinghouseState.assetPositions.find(
+                    (pos) => pos.position.coin === params.coin.name
+                )?.position?.szi
+            ) || 0;
+        });
+    } finally {
+        hlStarting[user] = false;
+    }
+
+
+
     subscribtions[params.coin.name] = subscribeBinanceCandlesWS(
         params.coin.name,
         params.interval,
@@ -62,7 +80,7 @@ export const tradeControllerStart = async (req: Request, res: Response) => {
                 exitMaxRsi: params.exitMaxRsi,
                 balance: userInfo.balance
             })
-            
+
 
         }
     );
@@ -70,19 +88,19 @@ export const tradeControllerStart = async (req: Request, res: Response) => {
 }
 
 
-export const tradeControllerStop = (req: Request, res: Response) => {
+export const tradeControllerStop = async (req: Request, res: Response) => {
     if (balanceAndPosSubsribes[user]) {
-        balanceAndPosSubsribes[user].unsubscribe();
+        await balanceAndPosSubsribes[user].unsubscribe();
         delete balanceAndPosSubsribes[user];
     }
 
     if (subscribtions[params.coin.name]) {
-        subscribtions[params.coin.name]();
+        await subscribtions[params.coin.name]();
         delete subscribtions[params.coin.name];
     }
 
     res.status(200).send(`Trade stopped for ${params.coin.name}`);
-}  
+}
 
 export const tradeControllerChangeParams = (req: Request, res: Response) => {
     const newParams: IParams = req.body;
