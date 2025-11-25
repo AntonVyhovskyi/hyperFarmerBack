@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import tradeRouter from '../routers/tradeRouter'
+import backTestRouter from '../routers/backTestRouter'
 import cors from 'cors';
 
 
@@ -15,6 +16,7 @@ app.use(cors());
 
 
 app.use('/trade', tradeRouter)
+app.use('/backTest', backTestRouter)
 
 
  
