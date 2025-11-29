@@ -3,6 +3,7 @@ import { IParams } from "../types/paramsTypes";
 import { subscribeBinanceCandlesWS } from "../binance/candlesWS";
 import { rsiStrategy } from "../strategy/rsi";
 import { subs as balanceAndPositionsWS } from "../sdk/wsInfo";
+import WebSocket from "ws";
 
 
 let params: IParams = {
@@ -35,29 +36,29 @@ const hlStarting: Record<string, boolean> = {};
 
 export const tradeControllerStart = async (req: Request, res: Response) => {
 
-    if (balanceAndPosSubsribes[user]) {
-        return res.status(400).send("Trade already started");
-    }
+    // if (balanceAndPosSubsribes[user]) {
+    //     return res.status(400).send("Trade already started");
+    // }
 
-    if (hlStarting[user]) {
-        return res.status(409).send("HL subscription is already starting");
-    }
+    // if (hlStarting[user]) {
+    //     return res.status(409).send("HL subscription is already starting");
+    // }
 
 
 
-    hlStarting[user] = true;
-    try {
-        balanceAndPosSubsribes[user] = await balanceAndPositionsWS.clearinghouseState({ user }, (data) => {
-            userInfo.balance = Number(data.clearinghouseState.crossMarginSummary.accountValue);
-            userInfo.position = Number(
-                data.clearinghouseState.assetPositions.find(
-                    (pos) => pos.position.coin === params.coin.name
-                )?.position?.szi
-            ) || 0;
-        });
-    } finally {
-        hlStarting[user] = false;
-    }
+    // hlStarting[user] = true;
+    // try {
+    //     balanceAndPosSubsribes[user] = await balanceAndPositionsWS.clearinghouseState({ user }, (data) => {
+    //         userInfo.balance = Number(data.clearinghouseState.crossMarginSummary.accountValue);
+    //         userInfo.position = Number(
+    //             data.clearinghouseState.assetPositions.find(
+    //                 (pos) => pos.position.coin === params.coin.name
+    //             )?.position?.szi
+    //         ) || 0;
+    //     });
+    // } finally {
+    //     hlStarting[user] = false;
+    // }
 
 
 
@@ -89,10 +90,10 @@ export const tradeControllerStart = async (req: Request, res: Response) => {
 
 
 export const tradeControllerStop = async (req: Request, res: Response) => {
-    if (balanceAndPosSubsribes[user]) {
-        await balanceAndPosSubsribes[user].unsubscribe();
-        delete balanceAndPosSubsribes[user];
-    }
+    // if (balanceAndPosSubsribes[user]) {
+    //     await balanceAndPosSubsribes[user].unsubscribe();
+    //     delete balanceAndPosSubsribes[user];
+    // }
 
     if (subscribtions[params.coin.name]) {
         await subscribtions[params.coin.name]();
@@ -118,3 +119,95 @@ export const tradeControllerGetStatus = (req: Request, res: Response) => {
 export const tradeControllerGetUserInfo = (req: Request, res: Response) => {
     res.status(200).json(userInfo);
 }
+
+
+
+
+function startClearinghouseWS() {
+    const url = "wss://api.hyperliquid.xyz/ws";
+    const user = process.env.USER_ADDRESS;
+
+    if (!user) {
+        console.error("USER_ADDRESS not set");
+        return;
+    }
+
+    let ws: WebSocket | null = null;
+
+    const connect = () => {
+        ws = new WebSocket(url);
+
+        ws.on("open", () => {
+            console.log("[HL WS] connected");
+
+            const msg = {
+                method: "subscribe",
+                subscription: {
+                    type: "clearinghouseState",
+                    user,
+                },
+            };
+
+            ws!.send(JSON.stringify(msg));
+        });
+
+        ws.on("message", (raw) => {
+            let msg: any;
+            try {
+                msg = JSON.parse(raw.toString());
+            } catch {
+                return;
+            }
+
+            if (msg.channel !== "clearinghouseState") {
+                return;
+            }
+
+            const chs = msg.data?.clearinghouseState;
+            if (!chs) {
+                console.log(
+                    "[HL WS] unexpected clearinghouseState shape:",
+                    JSON.stringify(msg, null, 2)
+                );
+                return;
+            }
+
+            // --- баланс (equity) ---
+            // з доки воно приходить строкою, тому Number()
+            const equity = Number(chs.crossMarginSummary.accountValue);
+
+            // --- позиції ---
+            const assetPositions = Array.isArray(chs.assetPositions)
+                ? chs.assetPositions
+                : [];
+
+            const activePositions = assetPositions
+                .filter((p: any) => p.position && Number(p.position.szi) !== 0)
+                .map((p: any) => p.position);
+
+            const posForCoin = activePositions.find(
+                (p: any) => p.coin === params.coin.name
+            );
+
+            userInfo.balance = equity;
+            userInfo.position = posForCoin ? Number(posForCoin.szi) : 0;
+
+            // можеш залишити для дебагу
+            // console.log("Updated userInfo:", userInfo);
+        });
+
+        ws.on("close", () => {
+            console.log("[HL WS] closed, reconnecting...");
+            setTimeout(connect, 2000); // простий реконект
+        });
+
+        ws.on("error", (err) => {
+            console.log("[HL WS] error:", err.message);
+        });
+    };
+
+    connect();
+}
+
+// ---- ЗАПУСКАЄМО WS ОДИН РАЗ ----
+startClearinghouseWS();
