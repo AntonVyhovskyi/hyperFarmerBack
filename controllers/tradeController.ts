@@ -5,6 +5,8 @@ import { rsiStrategy } from "../strategy/rsi";
 import { subs as balanceAndPositionsWS } from "../sdk/wsInfo";
 import WebSocket from "ws";
 
+import { IParamsForAdaptiveFunction, rsiAdxAdaptiveFunction } from "../strategy/rsiAdxAdaptive";
+
 
 let params: IParams = {
     coin: {
@@ -20,6 +22,31 @@ let params: IParams = {
     lavarage: 3,
     exitMinRsi: 50,
     exitMaxRsi: 51,
+}
+
+
+let paramsForAdaptive: Omit<IParamsForAdaptiveFunction, "balance" | "candle" | "position"> = {
+    coin: {
+        name: "ETH",
+        index: 1,
+    },
+    timeframe: "3m",
+    lavarage: 7,
+
+    rsiPeriod: 14,
+    adxPeriod: 14,
+    emaPeriod: 50,
+    atrPeriod: 14,
+    adxTrendThreshold: 25,
+    adxRangeThreshold: 20,
+    atrSlMultTrend: 2.5,
+    atrTpMultTrend: 5,
+    atrSlMultRange: 1.0,
+    atrTpMultRange: 2.0,
+    rsiPercentileLookback: 480,
+    rsiLowPercentile: 10,
+    rsiHighPercentile: 90,
+
 }
 
 let userInfo = {
@@ -60,7 +87,9 @@ export const tradeControllerStart = async (req: Request, res: Response) => {
     //     hlStarting[user] = false;
     // }
 
-
+    if (subscribtions[params.coin.name]) {
+        return res.status(400).send(`Trade already started for ${params.coin.name}`);
+    }
 
     subscribtions[params.coin.name] = subscribeBinanceCandlesWS(
         params.coin.name,
@@ -88,6 +117,25 @@ export const tradeControllerStart = async (req: Request, res: Response) => {
     res.status(200).send(`Trade started for ${params.coin.name} at interval ${params.interval}`);
 }
 
+export const tradeControllerStartAdaptive = async (req: Request, res: Response) => {
+    if (subscribtions[paramsForAdaptive.coin.name]) {
+        return res.status(400).send(`Adaptive trade already started for ${paramsForAdaptive.coin.name}`);
+    }
+
+    subscribtions[paramsForAdaptive.coin.name] = subscribeBinanceCandlesWS(
+        paramsForAdaptive.coin.name,
+        paramsForAdaptive.timeframe,
+        (candle) => {
+            rsiAdxAdaptiveFunction({
+                ...paramsForAdaptive,
+                candle,
+                balance: userInfo.balance,
+                position: userInfo.position
+            });
+        }
+    );
+    res.status(200).send(`Adaptive trade started for ${paramsForAdaptive.coin.name} at interval ${paramsForAdaptive.timeframe}`);
+}
 
 export const tradeControllerStop = async (req: Request, res: Response) => {
     // if (balanceAndPosSubsribes[user]) {
@@ -101,6 +149,14 @@ export const tradeControllerStop = async (req: Request, res: Response) => {
     }
 
     res.status(200).send(`Trade stopped for ${params.coin.name}`);
+}
+
+export const tradeControllerStopAdaptive = async (req: Request, res: Response) => {
+    if (subscribtions[paramsForAdaptive.coin.name]) {
+        await subscribtions[paramsForAdaptive.coin.name]();
+        delete subscribtions[paramsForAdaptive.coin.name];
+    }
+    res.status(200).send(`Adaptive trade stopped for ${paramsForAdaptive.coin.name}`);
 }
 
 export const tradeControllerChangeParams = (req: Request, res: Response) => {

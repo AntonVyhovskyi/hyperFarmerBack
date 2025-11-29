@@ -1,12 +1,14 @@
 import { Router } from "express";
 
-import { tradeControllerChangeParams, tradeControllerGetParams, tradeControllerGetStatus, tradeControllerGetUserInfo, tradeControllerStart, tradeControllerStop } from "../controllers/tradeController";
+import { tradeControllerChangeParams, tradeControllerGetParams, tradeControllerGetStatus, tradeControllerGetUserInfo, tradeControllerStart, tradeControllerStartAdaptive, tradeControllerStop, tradeControllerStopAdaptive } from "../controllers/tradeController";
 import { checkPassword } from "../middleware/checkPassword";
 
 const router = Router();
 
 router.post('/start',checkPassword(), tradeControllerStart);
 router.post('/stop',checkPassword(), tradeControllerStop);
+router.post('/startAdaptive', checkPassword(), tradeControllerStartAdaptive);
+router.post('/stopAdaptive', checkPassword(), tradeControllerStopAdaptive);
 router.get('/getParams', tradeControllerGetParams);
 router.put('/changeParams', checkPassword(), tradeControllerChangeParams);
 router.get('/status', tradeControllerGetStatus);
