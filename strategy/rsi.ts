@@ -44,11 +44,27 @@ export const rsiStrategy = async ({ coin = { name: "ETH", index: 1 },
 }: IParamsForFunction) => {
 
     if (cashe.candles.length === 0) {
-        cashe.candles = await getCandlesFromBinance(coin.name, timeframe, 100);
+        const candles = await getCandlesFromBinance(coin.name, timeframe, 100);
+
+        if (!Array.isArray(candles)) {
+            console.error("⛔ getCandlesFromBinance returned not array:", candles);
+            return;
+        }
+        cashe.candles = candles;
 
     } else {
         cashe.candles.push(candle);
         cashe.candles.shift();
+    }
+
+    if (!Array.isArray(cashe.candles)) {
+        console.log("⛔ cashe.candles is not array:", cashe.candles);
+        return;
+    }
+
+    if (cashe.candles.length === 0) {
+        console.log("⛔ cashe.candles is empty");
+        return;
     }
 
     if (cashe.lavarage !== lavarage) {
