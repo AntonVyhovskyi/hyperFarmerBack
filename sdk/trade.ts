@@ -125,6 +125,8 @@ export async function closeAllPositions(instrument: string = "ETH", instrumentIn
 
 
 export async function changeLavarage(instrumentIndex: number = 1, newLavarage: number = 3) {
+    
+    
     try {
         const res = await trade.updateLeverage({ asset: instrumentIndex, isCross: true, leverage: newLavarage });
         console.log(res);

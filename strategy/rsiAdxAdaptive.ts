@@ -10,6 +10,7 @@ const cashe = {
     candles: [] as string[][],
     lavarage: 3,
     tickSize: 1,
+    qtySize: 0.001,
 
 }
 
@@ -101,15 +102,22 @@ export const rsiAdxAdaptiveFunction = async (
     if (cashe.lavarage !== lavarage) {
         await changeLavarage(coin.index, lavarage);
         cashe.lavarage = lavarage;
+        
+        
     }
 
     if (coin.name === "BTC") {
         cashe.tickSize = 0.1;
+        cashe.qtySize = 0.001;
     } else if (coin.name === "ETH") {
         cashe.tickSize = 0.1;
+        cashe.qtySize = 0.001;
     } else if (coin.name === "SOL") {
         cashe.tickSize = 0.01;
+        cashe.qtySize = 0.01;
     }
+
+    
 
     const closes = cashe.candles.map(c => parseFloat(c[4]));
     const highs = cashe.candles.map(c => parseFloat(c[2]));
@@ -138,7 +146,7 @@ export const rsiAdxAdaptiveFunction = async (
 
         console.log({ entryPrice, slPrice, tpPrice });
 
-        const quantity = normalizeQty((((balance * lavarage) / entryPrice) * 0.7), 0.001);
+        const quantity = normalizeQty((((balance * lavarage) / entryPrice) * 0.7),  cashe.qtySize);
         await cancelAllOrdersByInstrument(coin.index, coin.name);
         await placeLimitOrder(coin.index, entryPrice, quantity, true);
         await placeStopOrTakeOrder(coin.index, slPrice, quantity, false, 'sl');
@@ -159,7 +167,7 @@ export const rsiAdxAdaptiveFunction = async (
 
         const quantity = normalizeQty(
             ((balance * lavarage) / entryPrice) * 0.7,
-            0.001
+             cashe.qtySize
         );
         await cancelAllOrdersByInstrument(coin.index, coin.name);
         await placeLimitOrder(coin.index, entryPrice, quantity, false);
@@ -170,11 +178,12 @@ export const rsiAdxAdaptiveFunction = async (
     }
 
     if (isTrend && position === 0) {
-        if (closes[closes.length - 1] > ema && rsi < 65 && rsi > 35) {
+        const rsiIsGood = rsi > 10 || rsi < 20;
+        if (closes[closes.length - 1] > ema && rsiIsGood) {
             const slPrice = normalizePrice(closes[closes.length - 1] - atr * atrSlMultTrend, cashe.tickSize);
             const tpPrice = normalizePrice(closes[closes.length - 1] + atr * atrTpMultTrend, cashe.tickSize);
             await openBuyOrder(slPrice, tpPrice);
-        } else if (closes[closes.length - 1] < ema && rsi > 35 && rsi < 65) {
+        } else if (closes[closes.length - 1] < ema && rsiIsGood) {
             const slPrice = normalizePrice(closes[closes.length - 1] + atr * atrSlMultTrend, cashe.tickSize);
             const tpPrice = normalizePrice(closes[closes.length - 1] - atr * atrTpMultTrend, cashe.tickSize);
             await openSellOrder(slPrice, tpPrice);
@@ -186,11 +195,11 @@ export const rsiAdxAdaptiveFunction = async (
         const dynHighIndex = Math.floor((rsiHighPercentile / 100) * sortedRsi.length);
         const dynLow = sortedRsi[dynLowIndex];
         const dynHigh = sortedRsi[dynHighIndex];
-        if (rsi < dynLow) {
+        if (rsi < dynLow || rsi>51) {
             const slPrice = normalizePrice(closes[closes.length - 1] - atr * atrSlMultRange, cashe.tickSize);
             const tpPrice = normalizePrice(closes[closes.length - 1] + atr * atrTpMultRange, cashe.tickSize);
             await openBuyOrder(slPrice, tpPrice);
-        } else if (rsi > dynHigh) {
+        } else if (rsi > dynHigh || rsi<50) {
             const slPrice = normalizePrice(closes[closes.length - 1] + atr * atrSlMultRange, cashe.tickSize);
             const tpPrice = normalizePrice(closes[closes.length - 1] - atr * atrTpMultRange, cashe.tickSize);
             await openSellOrder(slPrice, tpPrice);

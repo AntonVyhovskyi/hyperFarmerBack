@@ -10,8 +10,8 @@ import { IParamsForAdaptiveFunction, rsiAdxAdaptiveFunction } from "../strategy/
 
 let params: IParams = {
     coin: {
-        name: "ETH",
-        index: 1,
+        name: "SOL",
+        index: 5,
     },
     interval: "1m",
     sl: 1,
@@ -28,9 +28,9 @@ let params: IParams = {
 let paramsForAdaptive: Omit<IParamsForAdaptiveFunction, "balance" | "candle" | "position"> = {
     coin: {
         name: "SOL",
-        index: 2,
+        index: 5,
     },
-    timeframe: "3m",
+    timeframe: "1m",
     lavarage: 7,
 
     rsiPeriod: 14,
