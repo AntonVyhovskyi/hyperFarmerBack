@@ -178,7 +178,7 @@ export const rsiAdxAdaptiveFunction = async (
             const slPrice = normalizePrice(closes[closes.length - 1] + atr * atrSlMultTrend, cashe.tickSize);
             const tpPrice = normalizePrice(closes[closes.length - 1] - atr * atrTpMultTrend, cashe.tickSize);
             await openSellOrder(slPrice, tpPrice);
-        } else { console.log(`No action. Trend But conditions is not good`); }
+        } else { console.log(`No action. Is trend But conditions is not good. Price is ${closes[closes.length - 1]}. Ema is ${ema}. RSI is ${rsi}. RSI must be 35 - 65`); }
     } else if (isRange && position === 0) {
         const rsiLookback = rsiValues.slice(-rsiPercentileLookback);
         const sortedRsi = [...rsiLookback].sort((a, b) => a - b);
@@ -194,6 +194,6 @@ export const rsiAdxAdaptiveFunction = async (
             const slPrice = normalizePrice(closes[closes.length - 1] + atr * atrSlMultRange, cashe.tickSize);
             const tpPrice = normalizePrice(closes[closes.length - 1] - atr * atrTpMultRange, cashe.tickSize);
             await openSellOrder(slPrice, tpPrice);
-        } else { console.log(`No action. Range But conditions is not good`); }
-    } else { console.log(`No action. No trend Nor range. ADX: ${adx}`); }
+        } else { console.log(`No action. Range But conditions is not good. RSI is ${rsi}. RSI must be <${dynLow} or >${dynHigh}`); }
+    } else { console.log(`No action. No trend Nor range. ADX: ${adx}. Or position is here. Position: ${position}`); }
 }
