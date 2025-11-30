@@ -178,7 +178,7 @@ export const rsiAdxAdaptiveFunction = async (
     }
 
     if (isTrend && position === 0) {
-        const rsiIsGood = rsi > 10 || rsi < 20;
+        const rsiIsGood = rsi > 35 || rsi < 65;
         if (closes[closes.length - 1] > ema && rsiIsGood) {
             const slPrice = normalizePrice(closes[closes.length - 1] - atr * atrSlMultTrend, cashe.tickSize);
             const tpPrice = normalizePrice(closes[closes.length - 1] + atr * atrTpMultTrend, cashe.tickSize);
@@ -195,11 +195,11 @@ export const rsiAdxAdaptiveFunction = async (
         const dynHighIndex = Math.floor((rsiHighPercentile / 100) * sortedRsi.length);
         const dynLow = sortedRsi[dynLowIndex];
         const dynHigh = sortedRsi[dynHighIndex];
-        if (rsi < dynLow || rsi>51) {
+        if (rsi < dynLow) {
             const slPrice = normalizePrice(closes[closes.length - 1] - atr * atrSlMultRange, cashe.tickSize);
             const tpPrice = normalizePrice(closes[closes.length - 1] + atr * atrTpMultRange, cashe.tickSize);
             await openBuyOrder(slPrice, tpPrice);
-        } else if (rsi > dynHigh || rsi<50) {
+        } else if (rsi > dynHigh) {
             const slPrice = normalizePrice(closes[closes.length - 1] + atr * atrSlMultRange, cashe.tickSize);
             const tpPrice = normalizePrice(closes[closes.length - 1] - atr * atrTpMultRange, cashe.tickSize);
             await openSellOrder(slPrice, tpPrice);

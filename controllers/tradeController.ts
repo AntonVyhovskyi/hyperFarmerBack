@@ -30,7 +30,7 @@ let paramsForAdaptive: Omit<IParamsForAdaptiveFunction, "balance" | "candle" | "
         name: "SOL",
         index: 5,
     },
-    timeframe: "1m",
+    timeframe: "3m",
     lavarage: 7,
 
     rsiPeriod: 14,
