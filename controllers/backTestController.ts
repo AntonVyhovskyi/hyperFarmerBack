@@ -111,12 +111,12 @@ export const runRsiAdxAdaptiveStrateg = async (req: Request, res: Response) => {
       adxTrendThreshold: parseFloat(req.query.adxTrendThreshold as string) || 25,
       adxRangeThreshold: parseFloat(req.query.adxRangeThreshold as string) || 20,
       atrSlMultTrend: parseFloat(req.query.atrSlMultTrend as string) || 2.5,
-      atrTpMultTrend: parseFloat(req.query.atrTpMultTrend as string) || 5,
-      atrSlMultRange: parseFloat(req.query.atrSlMultRange as string) || 1.0,
-      atrTpMultRange: parseFloat(req.query.atrTpMultRange as string) || 2,
+      atrTpMultTrend: parseFloat(req.query.atrTpMultTrend as string) || 4.5,
+      atrSlMultRange: parseFloat(req.query.atrSlMultRange as string) || 2.5,
+      atrTpMultRange: parseFloat(req.query.atrTpMultRange as string) || 4.5,
       rsiPercentileLookback: parseInt(req.query.rsiPercentileLookback as string) || 480,
-      rsiLowPercentile: parseFloat(req.query.rsiLowPercentile as string) || 10,
-      rsiHighPercentile: parseFloat(req.query.rsiHighPercentile as string) || 90,
+      rsiLowPercentile: parseFloat(req.query.rsiLowPercentile as string) || 1,
+      rsiHighPercentile: parseFloat(req.query.rsiHighPercentile as string) || 99,
       balanceStart: parseFloat(req.query.balanceStart as string) || 1000,
     };
     const file = path.join(

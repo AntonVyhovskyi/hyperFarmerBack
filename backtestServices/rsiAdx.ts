@@ -18,6 +18,7 @@ export interface Trade {
     exitPrice: number;
     profitPct: number;
     result: "win" | "loss";
+    marketState?: "trend" | "range" | "unknown";
 }
 
 export interface BacktestResult {
@@ -31,6 +32,8 @@ export interface BacktestResult {
         winRate: number;
         profitPct: number;
     };
+    іsTrendWinRate?: number;
+    isRangeWinRate?: number;
 }
 
 export interface StrategyParams {

@@ -1,0 +1,274 @@
+{
+    "symbol": "SOLUSDT",
+    "interval": "3m",
+    "params": {
+        "rsiPeriod": 14,
+        "adxPeriod": 14,
+        "emaPeriod": 50,
+        "atrPeriod": 14,
+        "adxTrendThreshold": 25,
+        "adxRangeThreshold": 18,
+        "atrSlMultTrend": 2.5,
+        "atrTpMultTrend": 5,
+        "atrSlMultRange": 1,
+        "atrTpMultRange": 2,
+        "rsiPercentileLookback": 480,
+        "rsiLowPercentile": 1,
+        "rsiHighPercentile": 99,
+        "balanceStart": 1000
+    },
+    "result": {
+        "іsTrendWinRate": 36.56059580230197,
+        "isRangeWinRate": 24.489795918367346,
+        "balanceStart": 1000,
+        "balanceEnd": 3942.30333289762,
+        "summary": {
+            "total": 2985,
+            "wins": 1065,
+            "losses": 1920,
+            "winRate": 35.678391959798994,
+            "profitPct": 294.23033328976203
+        },
+    }
+}
+
+{
+    "symbol": "SOLUSDT",
+    "interval": "3m",
+    "params": {
+        "rsiPeriod": 14,
+        "adxPeriod": 14,
+        "emaPeriod": 50,
+        "atrPeriod": 14,
+        "adxTrendThreshold": 25,
+        "adxRangeThreshold": 19,
+        "atrSlMultTrend": 2.5,
+        "atrTpMultTrend": 5,
+        "atrSlMultRange": 1,
+        "atrTpMultRange": 2,
+        "rsiPercentileLookback": 480,
+        "rsiLowPercentile": 1,
+        "rsiHighPercentile": 99,
+        "balanceStart": 1000
+    },
+    "result": {
+        "іsTrendWinRate": 36.65311653116532,
+        "isRangeWinRate": 23.52941176470588,
+        "balanceStart": 1000,
+        "balanceEnd": 3794.694076725791,
+        "summary": {
+            "total": 3021,
+            "wins": 1072,
+            "losses": 1949,
+            "winRate": 35.48493876199934,
+            "profitPct": 279.4694076725791
+        },
+    }
+}
+
+{
+    "symbol": "SOLUSDT",
+    "interval": "3m",
+    "params": {
+        "rsiPeriod": 14,
+        "adxPeriod": 14,
+        "emaPeriod": 50,
+        "atrPeriod": 14,
+        "adxTrendThreshold": 25,
+        "adxRangeThreshold": 19,
+        "atrSlMultTrend": 2.5,
+        "atrTpMultTrend": 5,
+        "atrSlMultRange": 1,
+        "atrTpMultRange": 2,
+        "rsiPercentileLookback": 480,
+        "rsiLowPercentile": 1,
+        "rsiHighPercentile": 99,
+        "balanceStart": 1000
+    },
+    "result": {
+        "іsTrendWinRate": 36.65311653116532,
+        "isRangeWinRate": 23.52941176470588,
+        "balanceStart": 1000,
+        "balanceEnd": 3794.694076725791,
+        "summary": {
+            "total": 3021,
+            "wins": 1072,
+            "losses": 1949,
+            "winRate": 35.48493876199934,
+            "profitPct": 279.4694076725791
+        },
+    }
+}
+
+{
+    "symbol": "SOLUSDT",
+    "interval": "3m",
+    "params": {
+        "rsiPeriod": 14,
+        "adxPeriod": 14,
+        "emaPeriod": 50,
+        "atrPeriod": 14,
+        "adxTrendThreshold": 25,
+        "adxRangeThreshold": 20,
+        "atrSlMultTrend": 2.5,
+        "atrTpMultTrend": 5,
+        "atrSlMultRange": 2,
+        "atrTpMultRange": 4,
+        "rsiPercentileLookback": 480,
+        "rsiLowPercentile": 1,
+        "rsiHighPercentile": 99,
+        "balanceStart": 1000
+    },
+    "result": {
+        "іsTrendWinRate": 36.84931506849315,
+        "isRangeWinRate": 33.33333333333333,
+        "balanceStart": 1000,
+        "balanceEnd": 4647.591609796381,
+        "summary": {
+            "total": 3000,
+            "wins": 1082,
+            "losses": 1918,
+            "winRate": 36.06666666666667,
+            "profitPct": 364.75916097963807
+        },
+    }
+}
+
+
+{
+    "symbol": "SOLUSDT",
+    "interval": "3m",
+    "params": {
+        "rsiPeriod": 14,
+        "adxPeriod": 14,
+        "emaPeriod": 50,
+        "atrPeriod": 14,
+        "adxTrendThreshold": 25,
+        "adxRangeThreshold": 20,
+        "atrSlMultTrend": 2.5,
+        "atrTpMultTrend": 5,
+        "atrSlMultRange": 2.5,
+        "atrTpMultRange": 4.5,
+        "rsiPercentileLookback": 480,
+        "rsiLowPercentile": 1,
+        "rsiHighPercentile": 99,
+        "balanceStart": 1000
+    },
+    "result": {
+        "іsTrendWinRate": 36.99102829537612,
+        "isRangeWinRate": 39.743589743589745,
+        "balanceStart": 1000,
+        "balanceEnd": 5237.914690530356,
+        "summary": {
+            "total": 2975,
+            "wins": 1084,
+            "losses": 1891,
+            "winRate": 36.436974789915965,
+            "profitPct": 423.79146905303566
+        },
+    }
+}
+
+
+{
+    "symbol": "SOLUSDT",
+    "interval": "3m",
+    "params": {
+        "rsiPeriod": 14,
+        "adxPeriod": 14,
+        "emaPeriod": 50,
+        "atrPeriod": 14,
+        "adxTrendThreshold": 25,
+        "adxRangeThreshold": 20,
+        "atrSlMultTrend": 2.5,
+        "atrTpMultTrend": 5,
+        "atrSlMultRange": 2.5,
+        "atrTpMultRange": 5,
+        "rsiPercentileLookback": 480,
+        "rsiLowPercentile": 1,
+        "rsiHighPercentile": 99,
+        "balanceStart": 1000
+    },
+    "result": {
+        "іsTrendWinRate": 37.01657458563536,
+        "isRangeWinRate": 37.9746835443038,
+        "balanceStart": 1000,
+        "balanceEnd": 5196.564309770936,
+        "summary": {
+            "total": 2972,
+            "wins": 1079,
+            "losses": 1893,
+            "winRate": 36.305518169582776,
+            "profitPct": 419.65643097709363
+        },
+    }
+}
+
+{
+    "symbol": "SOLUSDT",
+    "interval": "3m",
+    "params": {
+        "rsiPeriod": 14,
+        "adxPeriod": 14,
+        "emaPeriod": 50,
+        "atrPeriod": 14,
+        "adxTrendThreshold": 25,
+        "adxRangeThreshold": 20,
+        "atrSlMultTrend": 2.5,
+        "atrTpMultTrend": 5,
+        "atrSlMultRange": 3,
+        "atrTpMultRange": 4.5,
+        "rsiPercentileLookback": 480,
+        "rsiLowPercentile": 1,
+        "rsiHighPercentile": 99,
+        "balanceStart": 1000
+    },
+    "result": {
+        "іsTrendWinRate": 36.95501730103806,
+        "isRangeWinRate": 46.666666666666664,
+        "balanceStart": 1000,
+        "balanceEnd": 5192.280313981837,
+        "summary": {
+            "total": 2960,
+            "wins": 1085,
+            "losses": 1875,
+            "winRate": 36.6554054054054,
+            "profitPct": 419.2280313981837
+        },
+    }
+}
+
+
+{
+    "symbol": "SOLUSDT",
+    "interval": "3m",
+    "params": {
+        "rsiPeriod": 14,
+        "adxPeriod": 14,
+        "emaPeriod": 50,
+        "atrPeriod": 14,
+        "adxTrendThreshold": 25,
+        "adxRangeThreshold": 20,
+        "atrSlMultTrend": 2.5,
+        "atrTpMultTrend": 4.5,
+        "atrSlMultRange": 2.5,
+        "atrTpMultRange": 4.5,
+        "rsiPercentileLookback": 480,
+        "rsiLowPercentile": 1,
+        "rsiHighPercentile": 99,
+        "balanceStart": 1000
+    },
+    "result": {
+        "іsTrendWinRate": 39.51005025125628,
+        "isRangeWinRate": 40,
+        "balanceStart": 1000,
+        "balanceEnd": 7354.586253196721,
+        "summary": {
+            "total": 3255,
+            "wins": 1264,
+            "losses": 1991,
+            "winRate": 38.83256528417819,
+            "profitPct": 635.4586253196721
+        },
+    }
+}

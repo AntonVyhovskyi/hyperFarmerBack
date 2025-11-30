@@ -72,6 +72,7 @@ export function rsiAdxAdaptiveStrategy(
     let tpPrice = 0;
     let entryPrice = 0;
     let entryTime = 0;
+    let marketState: "trend" | "range" | "unknown" = "unknown";
     const trades: Trade[] = [];
 
     const closes = candles.map(c => c.close);
@@ -158,6 +159,7 @@ export function rsiAdxAdaptiveStrategy(
                     exitPrice: slPrice,
                     result: "loss",
                     profitPct,
+                    marketState
                 });
 
                 position = null;
@@ -173,6 +175,7 @@ export function rsiAdxAdaptiveStrategy(
                     exitPrice: tpPrice,
                     result: "win",
                     profitPct,
+                    marketState
                 });
 
                 position = null;
@@ -187,41 +190,53 @@ export function rsiAdxAdaptiveStrategy(
                     entryTime = candle.openTime;
                     slPrice = entryPrice - atr * atrSlMultRange;
                     tpPrice = entryPrice + atr * atrTpMultRange;
+                    marketState = "range";
                 } else if (rsi > dynRsiHigh) {
                     position = 'short';
                     entryPrice = price;
                     entryTime = candle.openTime;
                     slPrice = entryPrice + atr * atrSlMultRange;
                     tpPrice = entryPrice - atr * atrTpMultRange;
+                    marketState = "range";
                 }
-            } else if (isTrend) {
+            } else
+                 if (isTrend) {
                 if (price > ema && rsi < 65 && rsi > 35) {
                     position = 'long';
                     entryPrice = price;
                     entryTime = candle.openTime;
                     slPrice = entryPrice - atr * atrSlMultTrend;
                     tpPrice = entryPrice + atr * atrTpMultTrend;
+                    marketState = "trend";
                 } else if (price < ema && rsi > 35 && rsi < 65) {
                     position = 'short';
                     entryPrice = price;
                     entryTime = candle.openTime;
                     slPrice = entryPrice + atr * atrSlMultTrend;
                     tpPrice = entryPrice - atr * atrTpMultTrend;
+                    marketState = "trend";
                 }
             }
         }
     }
+
+    const іsTrendWinRate = trades.filter(t => t.marketState === "trend" && t.result === "win").length / trades.filter(t => t.marketState === "trend").length * 100;
+    const isRangeWinRate = trades.filter(t => t.marketState === "range" && t.result === "win").length / trades.filter(t => t.marketState === "range").length * 100;
+
     return {
+        іsTrendWinRate,
+        isRangeWinRate,
         balanceStart: balanceStart,
         balanceEnd: balance,
-        trades: trades,
+
         summary: {
             total: trades.length,
             wins: trades.filter(t => t.result === "win").length,
             losses: trades.filter(t => t.result === "loss").length,
             winRate: trades.length ? (trades.filter(t => t.result === "win").length / trades.length) * 100 : 0,
             profitPct: ((balance - balanceStart) / balanceStart) * 100
-        }
+        },
+        trades: trades
     };
 
 }

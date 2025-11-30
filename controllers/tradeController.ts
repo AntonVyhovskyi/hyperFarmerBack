@@ -40,12 +40,12 @@ let paramsForAdaptive: Omit<IParamsForAdaptiveFunction, "balance" | "candle" | "
     adxTrendThreshold: 25,
     adxRangeThreshold: 20,
     atrSlMultTrend: 2.5,
-    atrTpMultTrend: 5,
-    atrSlMultRange: 1.0,
-    atrTpMultRange: 2.0,
+    atrTpMultTrend: 4.5,
+    atrSlMultRange: 2.5,
+    atrTpMultRange: 4.5,
     rsiPercentileLookback: 480,
-    rsiLowPercentile: 10,
-    rsiHighPercentile: 90,
+    rsiLowPercentile: 1,
+    rsiHighPercentile: 99,
 
 }
 
