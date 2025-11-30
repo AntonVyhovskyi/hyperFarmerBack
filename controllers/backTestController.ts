@@ -240,4 +240,4 @@ export const runRsiAdxOptimizationController = async (req: Request, res: Respons
     console.error("❌ Optimization error:", err);
     return res.status(500).json({ error: err.message });
   }
-};
+};   
