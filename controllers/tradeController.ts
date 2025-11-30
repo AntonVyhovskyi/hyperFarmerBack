@@ -27,8 +27,8 @@ let params: IParams = {
 
 let paramsForAdaptive: Omit<IParamsForAdaptiveFunction, "balance" | "candle" | "position"> = {
     coin: {
-        name: "ETH",
-        index: 1,
+        name: "SOL",
+        index: 2,
     },
     timeframe: "3m",
     lavarage: 7,
