@@ -27,8 +27,8 @@ let params: IParams = {
 
 let paramsForAdaptive: Omit<IParamsForAdaptiveFunction, "balance" | "candle" | "position"> = {
     coin: {
-        name: "ETH",
-        index: 1,
+        name: "SOL",
+        index: 2,
     },
     timeframe: "3m",
     lavarage: 7,
@@ -55,11 +55,9 @@ let userInfo = {
 }
 
 const subscribtions: any = {}
-const user = process.env.USER_ADDRESS || "";
-const balanceAndPosSubsribes: any = {}
 
 
-const hlStarting: Record<string, boolean> = {};
+// const hlStarting: Record<string, boolean> = {};
 
 export const tradeControllerStart = async (req: Request, res: Response) => {
 
