@@ -37,6 +37,7 @@ export async function placeLimitOrder(assetIndex: number = 1, price: number, siz
 
 
 export async function placeStopOrTakeOrder(assetIndex: number = 1, price: number, size: string, isBuy: boolean, tpsl: 'tp' | 'sl') {
+    const isSl = tpsl === "sl";
     const res = await trade.order({
         orders: [
             {
@@ -46,7 +47,11 @@ export async function placeStopOrTakeOrder(assetIndex: number = 1, price: number
                 s: size,                          // кількість у ETH
                 r: true,                         // reduce-only
                 t: {
-                    trigger: { triggerPx: price, isMarket: false, tpsl }
+                    trigger: {
+                        triggerPx: price,
+                        isMarket: isSl,   
+                        tpsl,
+                    }
                 },
                 c: "0x" + crypto.randomBytes(16).toString("hex") // унікальний client-id
             },
@@ -125,8 +130,8 @@ export async function closeAllPositions(instrument: string = "ETH", instrumentIn
 
 
 export async function changeLavarage(instrumentIndex: number = 1, newLavarage: number = 3) {
-    
-    
+
+
     try {
         const res = await trade.updateLeverage({ asset: instrumentIndex, isCross: true, leverage: newLavarage });
         console.log(res);

@@ -47,6 +47,13 @@ export interface IParamsForAdaptive {
     balanceStart?: number;           // Стартовий баланс для бектесту.
 }
 
+function formatDE(ts: number) {
+  return new Date(ts).toLocaleString("uk-UA", {
+    timeZone: "Europe/Berlin",
+    hour12: false,
+  });
+}
+
 
 export function rsiAdxAdaptiveStrategy(
     candles: Candle[],
@@ -72,6 +79,7 @@ export function rsiAdxAdaptiveStrategy(
     let tpPrice = 0;
     let entryPrice = 0;
     let entryTime = 0;
+    let leverage = 7;
     let marketState: "trend" | "range" | "unknown" = "unknown";
     const trades: Trade[] = [];
 
@@ -117,31 +125,35 @@ export function rsiAdxAdaptiveStrategy(
         if (position === 'long') {
             if (lowPrice <= slPrice) {
                 const profitPct = ((slPrice - entryPrice) / entryPrice) * 100; // буде від’ємне
-                balance *= (1 + profitPct / 100);
+                balance *= (1 + (profitPct * leverage) / 100);
 
                 trades.push({
                     type: 'long',
                     entryTime,
-                    exitTime: candle.openTime,
+                    exitTime: formatDE(candle.openTime),
                     entryPrice,
                     exitPrice: slPrice,
                     result: "loss",
                     profitPct,
+                    balance,
+                    marketState
                 });
 
                 position = null;
             } else if (highPrice >= tpPrice) {
                 const profitPct = ((tpPrice - entryPrice) / entryPrice) * 100; // додатнє
-                balance *= (1 + profitPct / 100);
+                balance *= (1 + (profitPct * leverage) / 100);
 
                 trades.push({
                     type: 'long',
                     entryTime,
-                    exitTime: candle.openTime,
+                    exitTime: formatDE(candle.openTime),
                     entryPrice,
                     exitPrice: tpPrice,
                     result: "win",
                     profitPct,
+                    balance,
+                    marketState
                 });
 
                 position = null;
@@ -149,33 +161,35 @@ export function rsiAdxAdaptiveStrategy(
         } else if (position === 'short') {
             if (highPrice >= slPrice) {
                 const profitPct = ((entryPrice - slPrice) / entryPrice) * 100; // від’ємне
-                balance *= (1 + profitPct / 100);
+                balance *= (1 + (profitPct * leverage) / 100);
 
                 trades.push({
                     type: 'short',
                     entryTime,
-                    exitTime: candle.openTime,
+                    exitTime: formatDE(candle.openTime),
                     entryPrice,
                     exitPrice: slPrice,
                     result: "loss",
                     profitPct,
-                    marketState
+                    marketState,
+                    balance
                 });
 
                 position = null;
             } else if (lowPrice <= tpPrice) {
                 const profitPct = ((entryPrice - tpPrice) / entryPrice) * 100; // ✅ TP для шорта
-                balance *= (1 + profitPct / 100);
+                balance *= (1 + (profitPct * leverage) / 100);
 
                 trades.push({
                     type: 'short',
                     entryTime,
-                    exitTime: candle.openTime,
+                    exitTime: formatDE(candle.openTime),
                     entryPrice,
                     exitPrice: tpPrice,
                     result: "win",
                     profitPct,
-                    marketState
+                    marketState,
+                    balance
                 });
 
                 position = null;
@@ -187,14 +201,14 @@ export function rsiAdxAdaptiveStrategy(
                 if (rsi < dynRsiLow) {
                     position = 'long';
                     entryPrice = price;
-                    entryTime = candle.openTime;
+                    entryTime = formatDE(candle.openTime);
                     slPrice = entryPrice - atr * atrSlMultRange;
                     tpPrice = entryPrice + atr * atrTpMultRange;
                     marketState = "range";
                 } else if (rsi > dynRsiHigh) {
                     position = 'short';
                     entryPrice = price;
-                    entryTime = candle.openTime;
+                    entryTime = formatDE(candle.openTime);
                     slPrice = entryPrice + atr * atrSlMultRange;
                     tpPrice = entryPrice - atr * atrTpMultRange;
                     marketState = "range";
@@ -204,14 +218,14 @@ export function rsiAdxAdaptiveStrategy(
                 if (price > ema && rsi < 65 && rsi > 35) {
                     position = 'long';
                     entryPrice = price;
-                    entryTime = candle.openTime;
+                    entryTime = formatDE(candle.openTime);
                     slPrice = entryPrice - atr * atrSlMultTrend;
                     tpPrice = entryPrice + atr * atrTpMultTrend;
                     marketState = "trend";
                 } else if (price < ema && rsi > 35 && rsi < 65) {
                     position = 'short';
                     entryPrice = price;
-                    entryTime = candle.openTime;
+                    entryTime = formatDE(candle.openTime);
                     slPrice = entryPrice + atr * atrSlMultTrend;
                     tpPrice = entryPrice - atr * atrTpMultTrend;
                     marketState = "trend";

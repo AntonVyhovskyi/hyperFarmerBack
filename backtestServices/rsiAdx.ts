@@ -14,11 +14,13 @@ export interface Trade {
     type: "long" | "short";
     entryTime: number;
     exitTime: number;
-    entryPrice: number;
-    exitPrice: number;
+    entryPrice: number | string;
+    exitPrice: number | string;
     profitPct: number;
     result: "win" | "loss";
     marketState?: "trend" | "range" | "unknown";
+    balance?: number;
+    leverage?: number;
 }
 
 export interface BacktestResult {
@@ -34,6 +36,7 @@ export interface BacktestResult {
     };
     іsTrendWinRate?: number;
     isRangeWinRate?: number;
+    
 }
 
 export interface StrategyParams {
