@@ -12,29 +12,32 @@ export interface Candle {
 
 export interface Trade {
     type: "long" | "short";
-    entryTime: number;
-    exitTime: number;
+    entryTime: number | string;
+    exitTime: number | string;
     entryPrice: number | string;
     exitPrice: number | string;
     profitPct: number;
-    result: "win" | "loss";
+    result: "win" | "loss" | "null";
     marketState?: "trend" | "range" | "unknown";
     balance?: number;
     leverage?: number;
+    exitType?: string;
 }
 
 export interface BacktestResult {
     balanceStart: number;
     balanceEnd: number;
+    params: any;
     trades: Trade[];
     summary: {
         total: number;
         wins: number;
+        nulls: number;
         losses: number;
         winRate: number;
         profitPct: number;
     };
-    іsTrendWinRate?: number;
+    isTrendWinRate?: number;
     isRangeWinRate?: number;
     
 }

@@ -5,6 +5,8 @@ import { saveCandlesToFile } from "../backtestServices/getCandles";
 import { rsiAdxStrategy } from "../backtestServices/rsiAdx";
 import path from 'path';
 import { rsiAdxAdaptiveStrategy, type IParamsForAdaptive } from "../backtestServices/rsiAdxAdaptiveStrateg";
+import { conservativeStrategyBacktesting, IParamsForConservative } from "../backtestServices/conservative";
+import { conservativeV2StrategyBacktesting, IParamsForConservativeV2 } from "../backtestServices/conservativeV2";
 
 export const getCandlesController = async (req: Request, res: Response) => {
   try {
@@ -241,3 +243,92 @@ export const runRsiAdxOptimizationController = async (req: Request, res: Respons
     return res.status(500).json({ error: err.message });
   }
 };
+
+
+export const runConservativeStrategyController = async (req: Request, res: Response) => {
+  console.log('is reqest');
+  
+  try {
+    const symbol = req.params.symbol.toUpperCase();
+    const interval = (req.query.interval as string) || "3m";
+    const period = (req.query.period as string) || "lastYear";
+    let params: IParamsForConservative = {
+      emaShortPeriod: parseInt(req.query.emaShortPeriod as string) || 7,
+      emaLongPeriod: parseInt(req.query.emaLongPeriod as string) || 25,
+      atrPeriod: parseInt(req.query.atrPeriod as string) || 14,
+      balanceStart: parseFloat(req.query.balanceStart as string) || 1000,
+    };
+    const file = path.join(
+      __dirname,
+      "../backtestServices/data",
+      symbol,
+      `${symbol}_${interval}_${period}.json`
+    );
+
+    if (!fs.existsSync(file)) {
+      return res.status(404).json({ error: `File not found: ${file}` });
+    }
+
+    const candles = JSON.parse(fs.readFileSync(file, "utf-8"));
+
+    const result = conservativeStrategyBacktesting(candles, params);
+
+    return res.json({
+      symbol,
+      interval,
+      params,
+      result,
+    });
+
+
+  } catch (err: any) {
+    console.error("❌ Backtest error:", err);
+    return res.status(500).json({ error: err.message });
+  }
+}
+
+export const runConservativeV2StrategyController = async (req: Request, res: Response) => {
+  console.log('is reqest');
+  
+  try {
+    const symbol = req.params.symbol.toUpperCase();
+    const interval = (req.query.interval as string) || "3m";
+    const period = (req.query.period as string) || "lastYear";
+    let params: IParamsForConservativeV2 = {
+      emaShortPeriod: parseInt(req.query.emaShortPeriod as string) || 7,
+      emaLongPeriod: parseInt(req.query.emaLongPeriod as string) || 25,
+      atrPeriod: parseInt(req.query.atrPeriod as string) || 14,
+      balanceStart: parseFloat(req.query.balanceStart as string) || 1000,
+      atrRange: parseFloat(req.query.atrRange as string) || 0.5,
+      atrPctforSL: parseFloat(req.query.atrPctforSL as string) || 2.5,
+      riskPct: parseFloat(req.query.riskPct as string) || 2,
+      laverageFromParams: parseFloat(req.query.laverageFromParams as string) || 7,
+    };
+    const file = path.join(
+      __dirname,
+      "../backtestServices/data",
+      symbol,
+      `${symbol}_${interval}_${period}.json`
+    );
+
+    if (!fs.existsSync(file)) {
+      return res.status(404).json({ error: `File not found: ${file}` });
+    }
+
+    const candles = JSON.parse(fs.readFileSync(file, "utf-8"));
+
+    const result = conservativeV2StrategyBacktesting(candles, params);
+
+    return res.json({
+      symbol,
+      interval,
+      params,
+      result,
+    });
+
+
+  } catch (err: any) {
+    console.error("❌ Backtest error:", err);
+    return res.status(500).json({ error: err.message });
+  }
+}

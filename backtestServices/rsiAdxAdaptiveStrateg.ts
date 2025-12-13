@@ -234,11 +234,11 @@ export function rsiAdxAdaptiveStrategy(
         }
     }
 
-    const іsTrendWinRate = trades.filter(t => t.marketState === "trend" && t.result === "win").length / trades.filter(t => t.marketState === "trend").length * 100;
+    const isTrendWinRate = trades.filter(t => t.marketState === "trend" && t.result === "win").length / trades.filter(t => t.marketState === "trend").length * 100;
     const isRangeWinRate = trades.filter(t => t.marketState === "range" && t.result === "win").length / trades.filter(t => t.marketState === "range").length * 100;
 
     return {
-        іsTrendWinRate,
+        isTrendWinRate,
         isRangeWinRate,
         balanceStart: balanceStart,
         balanceEnd: balance,
