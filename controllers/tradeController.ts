@@ -8,6 +8,7 @@ import WebSocket from "ws";
 import { IParamsForAdaptiveFunction, rsiAdxAdaptiveFunction } from "../strategy/rsiAdxAdaptive";
 
 import { emaConservativeFunction, IParamsForEmaConservativeFunction } from "../strategy/emaConservative";
+import { IParamsForConservativeV2 } from "../backtestServices/conservativeV2";
 
 
 let params: IParams = {
@@ -51,7 +52,7 @@ let paramsForAdaptive: Omit<IParamsForAdaptiveFunction, "balance" | "candle" | "
 
 }
 
-const paramsForConservativeV2 = {
+const paramsForConservativeV2: Omit<IParamsForEmaConservativeFunction, "balance" | "candle" | "position"> = {
     emaShortPeriod: 7,
     emaLongPeriod: 25,
     atrPeriod: 14,
@@ -207,9 +208,9 @@ export const tradeControllerStartConservativeV2 = async (req: Request, res: Resp
     subscribtions[paramsForConservativeV2.coin.name] = subscribeBinanceCandlesWS(
         paramsForConservativeV2.coin.name,
         paramsForConservativeV2.timeframe,
-        (candle) => {
+        (candle: string[]) => {
             emaConservativeFunction({
-                ...paramsForAdaptive,
+                ...paramsForConservativeV2,
                 candle,
                 balance: userInfo.balance,
                 position: userInfo.position
