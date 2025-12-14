@@ -66,7 +66,7 @@ export const emaConservativeFunction = async (
         emaLongPeriod = 25,
         atrPeriod = 14,
         atrRange = 0.5,
-        riskPct = 2,
+        riskPct = 1.5,
         atrPctforSL = 2.5,
         trailStartFromParams = 2,
         trailGapFromParams = 1,
@@ -162,10 +162,22 @@ export const emaConservativeFunction = async (
         const { qty, nMargin, notional } = calculateQtyAndNMargin(balance, riskPct, entryPrice, slPrice, leverage, "long");
         if (nMargin > balance) {
             console.log(`⛔ Not enough balance to open long position. Required margin: ${nMargin}, Available balance: ${balance}`);
-            const newLeverage = Math.ceil(balance / notional);
+            const newLeverage = Math.ceil(notional / balance);
+
+            if (newLeverage  > 20) {
+                console.log('За велика позиція для данного ризик менеджменту');
+                return
+            }
+
             await changeLavarage(coin.index, newLeverage);
             cashe.leverage = newLeverage;
+            const newMargin = notional / newLeverage;
+            if (newMargin > balance) {
+                console.log("❌ Even with new leverage margin still too high");
+                return;
+            }
         }
+
 
         const quantity = normalizeQty(qty, cashe.qtySize);
         await cancelAllOrdersByInstrument(coin.index, coin.name);
@@ -189,10 +201,25 @@ export const emaConservativeFunction = async (
         const { qty, nMargin, notional } = calculateQtyAndNMargin(balance, riskPct, entryPrice, slPrice, leverage, "short");
         if (nMargin > balance) {
             console.log(`⛔ Not enough balance to open short position. Required margin: ${nMargin}, Available balance: ${balance}`);
-            const newLeverage = Math.ceil(balance / notional);
+            const newLeverage = Math.ceil(notional / balance);
+             if (newLeverage  > 20) {
+                console.log('За велика позиція для данного ризик менеджменту');
+                return
+            }
             await changeLavarage(coin.index, newLeverage);
             cashe.leverage = newLeverage;
+            const newMargin = notional / newLeverage;
+            if (newMargin > balance) {
+                console.log("❌ Even with new leverage margin still too high");
+                return;
+            }
 
+
+        }
+
+        if (cashe.leverage > 20) {
+            console.log('За велика позиція для данного ризик менеджменту');
+            return
 
         }
 
@@ -267,16 +294,16 @@ export const emaConservativeFunction = async (
             console.log(`Close long position on ${coin.name} due to EMA crossover`);
 
 
-        } else if (!cashe.trailingActive && closes[closes.length - 1] >= cashe.entryPrice * (1+(bePrc/100))) {
+        } else if (!cashe.trailingActive && closes[closes.length - 1] >= cashe.entryPrice * (1 + (bePrc / 100))) {
             await cancelAllOrdersByInstrument(coin.index, coin.name);
             await placeStopOrTakeOrder(coin.index, cashe.entryPrice, position.toString(), false, 'sl');
             cashe.slPrice = cashe.entryPrice;
             console.log(`Активований беззбтковий стоп ${coin.name} по ціні ${cashe.entryPrice}`);
         } else if (!cashe.trailingActive && (closes[closes.length - 1] >= cashe.entryPrice * (1 + trailStartFromParams / 100))) {
-           
+
             const newSlPrice = normalizePrice(cashe.slPrice * (1 + trailGapFromParams / 100), cashe.tickSize);
             cashe.slPrice = newSlPrice;
-             await cancelAllOrdersByInstrument(coin.index, coin.name);
+            await cancelAllOrdersByInstrument(coin.index, coin.name);
             await placeStopOrTakeOrder(coin.index, newSlPrice, position.toString(), false, 'sl');
             console.log(`Activate trailing SL for long position on ${coin.name} at ${cashe.entryPrice}`);
             cashe.trailingActive = true;
@@ -301,7 +328,7 @@ export const emaConservativeFunction = async (
             position = 0;
             await new Promise(r => setTimeout(r, 2000));
             await openPositionLogic();
-        } else if (!cashe.trailingActive && (closes[closes.length - 1] <= (cashe.entryPrice * (1-(bePrc/100))) )) {
+        } else if (!cashe.trailingActive && (closes[closes.length - 1] <= (cashe.entryPrice * (1 - (bePrc / 100))))) {
             await cancelAllOrdersByInstrument(coin.index, coin.name);
             await placeStopOrTakeOrder(coin.index, cashe.entryPrice, position.toString(), true, 'sl');
             cashe.slPrice = cashe.entryPrice;
