@@ -2,10 +2,12 @@ import { Request, Response } from "express";
 import { IParams } from "../types/paramsTypes";
 import { subscribeBinanceCandlesWS } from "../binance/candlesWS";
 import { rsiStrategy } from "../strategy/rsi";
-import { subs as balanceAndPositionsWS } from "../sdk/wsInfo";
+
 import WebSocket from "ws";
 
 import { IParamsForAdaptiveFunction, rsiAdxAdaptiveFunction } from "../strategy/rsiAdxAdaptive";
+
+import { emaConservativeFunction, IParamsForEmaConservativeFunction } from "../strategy/emaConservative";
 
 
 let params: IParams = {
@@ -49,17 +51,35 @@ let paramsForAdaptive: Omit<IParamsForAdaptiveFunction, "balance" | "candle" | "
 
 }
 
+const paramsForConservativeV2 = {
+    emaShortPeriod: 7,
+    emaLongPeriod: 25,
+    atrPeriod: 14,
+    atrRange: 0.5,
+    riskPct: 1,
+    atrPctforSL: 2.5,
+    trailStartFromParams: 2,
+    trailGapFromParams: 1,
+    leverage: 7,
+    coin: {
+        name: "SOL",
+        index: 5,
+    },
+    timeframe: "3m"
+
+}
+
 let userInfo = {
     balance: 0,
     position: 0
 }
 
 const subscribtions: any = {}
-const user = process.env.USER_ADDRESS || "";
-const balanceAndPosSubsribes: any = {}
+// const user = process.env.USER_ADDRESS || "";
+// const balanceAndPosSubsribes: any = {}
 
 
-const hlStarting: Record<string, boolean> = {};
+// const hlStarting: Record<string, boolean> = {};
 
 export const tradeControllerStart = async (req: Request, res: Response) => {
 
@@ -175,6 +195,47 @@ export const tradeControllerGetStatus = (req: Request, res: Response) => {
 export const tradeControllerGetUserInfo = (req: Request, res: Response) => {
     res.status(200).json(userInfo);
 }
+
+
+// _____________________________Conservative V2____________________________________________________
+
+
+export const tradeControllerStartConservativeV2 = async (req: Request, res: Response) => {
+    if (subscribtions[paramsForConservativeV2.coin.name]) {
+        return res.status(400).send(`Adaptive trade already started for ${paramsForConservativeV2.coin.name}`);
+    }
+    subscribtions[paramsForConservativeV2.coin.name] = subscribeBinanceCandlesWS(
+        paramsForConservativeV2.coin.name,
+        paramsForConservativeV2.timeframe,
+        (candle) => {
+            emaConservativeFunction({
+                ...paramsForAdaptive,
+                candle,
+                balance: userInfo.balance,
+                position: userInfo.position
+            });
+        }
+    );
+    res.status(200).send(`Adaptive trade started for ${paramsForAdaptive.coin.name} at interval ${paramsForAdaptive.timeframe}`);
+}
+
+export const tradeControllerStopConservativeV2 = async (req: Request, res: Response) => {
+    if (subscribtions[paramsForConservativeV2.coin.name]) {
+        await subscribtions[paramsForConservativeV2.coin.name]();
+        delete subscribtions[paramsForConservativeV2.coin.name];
+    }
+    res.status(200).send(`Adaptive trade stopped for ${paramsForConservativeV2.coin.name}`);
+}
+
+
+
+// ________________________________________________________________________________________________
+
+
+
+
+
+
 
 
 

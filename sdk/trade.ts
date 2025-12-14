@@ -3,6 +3,7 @@ import { HttpTransport, ExchangeClient } from "@nktkas/hyperliquid";
 import crypto from "crypto";
 import dotenv from 'dotenv';
 import { getInfo, getMidPrice, getOpenOrders } from "./info";
+
 dotenv.config();
 
 const trade = new ExchangeClient({
@@ -113,7 +114,7 @@ export async function closeAllPositions(instrument: string = "ETH", instrumentIn
                 orders: [{
                     a: instrumentIndex,
                     b: neededSide,
-                    p: slipPrice.toFixed(1),
+                    p: slipPrice.toFixed(instrument === "SOL" ? 1 : 2),
                     s: sziWithoutMinus,
                     r: true,
                     t: { limit: { tif: "Ioc" } },
@@ -141,4 +142,6 @@ export async function changeLavarage(instrumentIndex: number = 1, newLavarage: n
     }
 
 }
+
+
 
