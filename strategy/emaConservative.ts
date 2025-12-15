@@ -330,7 +330,7 @@ export const emaConservativeFunction = async (
             await openPositionLogic();
         } else if (!cashe.trailingActive && (closes[closes.length - 1] <= (cashe.entryPrice * (1 - (bePrc / 100))))) {
             await cancelAllOrdersByInstrument(coin.index, coin.name);
-            await placeStopOrTakeOrder(coin.index, cashe.entryPrice, position.toString(), true, 'sl');
+            await placeStopOrTakeOrder(coin.index, cashe.entryPrice, Math.abs(position).toString(), true, 'sl');
             cashe.slPrice = cashe.entryPrice;
             console.log(`Активований беззбтковий стоп ${coin.name} по ціні ${cashe.entryPrice}`);
         } else if (!cashe.trailingActive && (closes[closes.length - 1] <= cashe.entryPrice * (1 - trailStartFromParams / 100))) {
