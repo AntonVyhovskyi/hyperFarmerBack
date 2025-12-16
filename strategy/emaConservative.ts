@@ -289,7 +289,7 @@ export const emaConservativeFunction = async (
             await closeAllPositions(coin.name, coin.index);
             position = 0;
             cashe.trailingActive = false
-            await new Promise(r => setTimeout(r, 2000));
+            await new Promise(r => setTimeout(r, 5000));
             await openPositionLogic();
 
 
@@ -329,7 +329,7 @@ export const emaConservativeFunction = async (
             console.log(`Close short position on ${coin.name} due to EMA crossover`);
             cashe.trailingActive = false
             position = 0;
-            await new Promise(r => setTimeout(r, 2000));
+            await new Promise(r => setTimeout(r, 5000));
             await openPositionLogic();
         } else if (!cashe.beActive && !cashe.trailingActive && (closes[closes.length - 1] <= (cashe.entryPrice * (1 - (bePrc / 100))))) {
             await cancelAllOrdersByInstrument(coin.index, coin.name);
