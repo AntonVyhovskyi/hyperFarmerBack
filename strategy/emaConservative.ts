@@ -158,7 +158,7 @@ export const emaConservativeFunction = async (
 
 
     const openBuyOrder = async (slPrice: number) => {
-        const entryPrice: number = normalizePrice(((Number(closes[closes.length - 1]) + Number(closes[closes.length - 2])) / 2), cashe.tickSize);
+        const entryPrice: number = normalizePrice(closes[closes.length - 1], cashe.tickSize);
 
         const { qty, nMargin, notional } = calculateQtyAndNMargin(balance, riskPct, entryPrice, slPrice, leverage, "long");
         if (nMargin > balance) {
@@ -193,9 +193,7 @@ export const emaConservativeFunction = async (
 
     const openSellOrder = async (slPrice: number) => {
         const entryPrice: number = normalizePrice(
-            (Number(closes[closes.length - 1]) +
-                Number(closes[closes.length - 2])) /
-            2,
+            closes[closes.length - 1],
             cashe.tickSize
         );
 
