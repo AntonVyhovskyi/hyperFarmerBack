@@ -15,6 +15,7 @@ const cashe = {
     entryPrice: 0,
     trailingActive: false,
     slPrice: 0,
+    beActive: false
 
 }
 
@@ -248,6 +249,7 @@ export const emaConservativeFunction = async (
 
         if (position === 0) {
             cashe.trailingActive = false;
+            cashe.beActive = false;
             if (emaShort > emaLong && prevEmaShort < prevEmaLong) {
 
                 const lastFiveClothes = cashe.candles.slice(-5).map(c => parseFloat(c[4]));
@@ -294,10 +296,11 @@ export const emaConservativeFunction = async (
             console.log(`Close long position on ${coin.name} due to EMA crossover`);
 
 
-        } else if (!cashe.trailingActive && closes[closes.length - 1] >= cashe.entryPrice * (1 + (bePrc / 100))) {
+        } else if (!cashe.beActive && !cashe.trailingActive && closes[closes.length - 1] >= cashe.entryPrice * (1 + (bePrc / 100))) {
             await cancelAllOrdersByInstrument(coin.index, coin.name);
             await placeStopOrTakeOrder(coin.index, cashe.entryPrice, position.toString(), false, 'sl');
             cashe.slPrice = cashe.entryPrice;
+            cashe.beActive = true
             console.log(`Активований беззбтковий стоп ${coin.name} по ціні ${cashe.entryPrice}`);
         } else if (!cashe.trailingActive && (closes[closes.length - 1] >= cashe.entryPrice * (1 + trailStartFromParams / 100))) {
 
@@ -328,10 +331,11 @@ export const emaConservativeFunction = async (
             position = 0;
             await new Promise(r => setTimeout(r, 2000));
             await openPositionLogic();
-        } else if (!cashe.trailingActive && (closes[closes.length - 1] <= (cashe.entryPrice * (1 - (bePrc / 100))))) {
+        } else if (!cashe.beActive && !cashe.trailingActive && (closes[closes.length - 1] <= (cashe.entryPrice * (1 - (bePrc / 100))))) {
             await cancelAllOrdersByInstrument(coin.index, coin.name);
             await placeStopOrTakeOrder(coin.index, cashe.entryPrice, Math.abs(position).toString(), true, 'sl');
             cashe.slPrice = cashe.entryPrice;
+            cashe.beActive = true
             console.log(`Активований беззбтковий стоп ${coin.name} по ціні ${cashe.entryPrice}`);
         } else if (!cashe.trailingActive && (closes[closes.length - 1] <= cashe.entryPrice * (1 - trailStartFromParams / 100))) {
             await cancelAllOrdersByInstrument(coin.index, coin.name);
