@@ -61,3 +61,15 @@ export function saveCandlesToFile(
 }
 
 
+
+// (async () => {
+//   const c2023 = await fetchCandlesRange(
+//     "SOLUSDT",
+//     "3m",
+//     Date.UTC(2023, 0, 1, 0, 0, 0),
+//     Date.UTC(2023, 11, 31, 23, 59, 59)
+//   );
+
+//   saveCandlesToFile("SOLUSDT", "3m", c2023, "2023");
+
+// })();

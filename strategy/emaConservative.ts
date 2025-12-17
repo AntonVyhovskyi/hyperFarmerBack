@@ -253,7 +253,7 @@ export const emaConservativeFunction = async (
                 const lastFiveClothes = cashe.candles.slice(-5).map(c => parseFloat(c[4]));
                 const minLastFive = Math.min(...lastFiveClothes);
                 const priceChangePct = ((closes[closes.length - 1] - minLastFive) / minLastFive) * 100;
-                if (priceChangePct <= atrRange) {
+                if (priceChangePct >= atrRange) {
                     const slPrice = normalizePrice(closes[closes.length - 1] - atr * (atrPctforSL), cashe.tickSize);
                     await openBuyOrder(slPrice);
                 }
@@ -262,7 +262,7 @@ export const emaConservativeFunction = async (
                 const lastFiveClothes = cashe.candles.slice(-5).map(c => parseFloat(c[4]));
                 const maxLastFive = Math.max(...lastFiveClothes);
                 const priceChangePct = ((maxLastFive - closes[closes.length - 1]) / maxLastFive) * 100;
-                if (priceChangePct <= atrRange) {
+                if (priceChangePct >= atrRange) {
                     const slPrice = normalizePrice(closes[closes.length - 1] + atr * (atrPctforSL), cashe.tickSize);
                     await openSellOrder(slPrice);
                 }

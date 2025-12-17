@@ -293,7 +293,7 @@ export const runConservativeV2StrategyController = async (req: Request, res: Res
   try {
     const symbol = req.params.symbol.toUpperCase();
     const interval = (req.query.interval as string) || "3m";
-    const period = (req.query.period as string) || "lastYear";
+    const period = (req.query.period as string) || "2024";
     let params: IParamsForConservativeV2 = {
       emaShortPeriod: parseInt(req.query.emaShortPeriod as string) || 7,
       emaLongPeriod: parseInt(req.query.emaLongPeriod as string) || 25,
@@ -301,8 +301,10 @@ export const runConservativeV2StrategyController = async (req: Request, res: Res
       balanceStart: parseFloat(req.query.balanceStart as string) || 1000,
       atrRange: parseFloat(req.query.atrRange as string) || 0.5,
       atrPctforSL: parseFloat(req.query.atrPctforSL as string) || 2.5,
-      riskPct: parseFloat(req.query.riskPct as string) || 3.2,
-      laverageFromParams: parseFloat(req.query.laverageFromParams as string) || 10,
+      riskPct: parseFloat(req.query.riskPct as string) || 1,
+      trailStartFromParams: 1,
+      trailGapFromParams: 0.5,
+      laverageFromParams: parseFloat(req.query.laverageFromParams as string) || 7,
     };
     const file = path.join(
       __dirname,
