@@ -134,26 +134,7 @@ export function conservativeV2StrategyBacktesting(
         });
         position = null;
         trailingActive = false;
-      } else if (emaShort < emaLong) {
-        const profit = quantity * (price - entryPrice);
-        const balanceBeforeTrade = balance;
-        balance += profit;
-        trades.push({
-          type: 'long',
-          entryTime,
-          exitTime: formatDE(candle.openTime),
-          entryPrice,
-          exitPrice: price,
-          result: profit === 0 ? "null" : profit > 0 ? "win" : "loss",
-          profitPct: (profit / balanceBeforeTrade) * 100,
-          balance,
-          leverage,
-          marketState,
-          exitType: "emaCross"
-        })
-        position = null;
-        trailingActive = false;
-      }
+      } 
       else if (
         profitForCorrectStopProcent >= 1.5 &&
         profitForCorrectStopProcent < trailStart &&
@@ -195,27 +176,7 @@ export function conservativeV2StrategyBacktesting(
         });
         position = null;
         trailingActive = false;
-      } else if (emaShort > emaLong) {
-        const profit = quantity * (entryPrice - price)
-        const balanceBeforeTrade = balance;
-        balance += profit;
-        trades.push({
-          type: 'short',
-          entryTime,
-          exitTime: formatDE(candle.openTime),
-          entryPrice,
-          exitPrice: price,
-          result: profit === 0 ? "null" : profit > 0 ? "win" : "loss",
-          profitPct: (profit / balanceBeforeTrade) * 100,
-          balance,
-          leverage,
-          marketState,
-          exitType: "emaCross"
-        })
-        position = null;
-        trailingActive = false;
-      }
-      else if (
+      } else if (
         profitForCorrectStopProcent >= 1.5 &&
         profitForCorrectStopProcent < trailStart &&
         !trailingActive

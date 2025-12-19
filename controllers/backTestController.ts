@@ -302,9 +302,11 @@ export const runConservativeV2StrategyController = async (req: Request, res: Res
       atrRange: parseFloat(req.query.atrRange as string) || 0.5,
       atrPctforSL: parseFloat(req.query.atrPctforSL as string) || 2.5,
       riskPct: parseFloat(req.query.riskPct as string) || 1,
+
       trailStartFromParams: 1,
       trailGapFromParams: 0.5,
       laverageFromParams: parseFloat(req.query.laverageFromParams as string) || 7,
+
     };
     const file = path.join(
       __dirname,
