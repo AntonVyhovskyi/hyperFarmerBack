@@ -59,8 +59,8 @@ const paramsForConservativeV2: Omit<IParamsForEmaConservativeFunction, "balance"
     atrRange: 0.5,
     riskPct: 1,
     atrPctforSL: 2.5,
-    trailStartFromParams: 2,
-    trailGapFromParams: 1,
+    trailStartFromParams: 1,
+    trailGapFromParams: 0.5,
     leverage: 7,
     coin: {
         name: "SOL",
