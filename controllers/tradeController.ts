@@ -53,20 +53,20 @@ let paramsForAdaptive: Omit<IParamsForAdaptiveFunction, "balance" | "candle" | "
 }
 
 const paramsForConservativeV2: Omit<IParamsForEmaConservativeFunction, "balance" | "candle" | "position"> = {
-    emaShortPeriod: 5,
+    emaShortPeriod: 7,
     emaLongPeriod: 25,
     atrPeriod: 14,
-    atrRange: 0.1,
+    atrRange: 0.5,
     riskPct: 1,
     atrPctforSL: 2.5,
-    trailStartFromParams: 0.2,
-    trailGapFromParams: 0.1,
+    trailStartFromParams: 1,
+    trailGapFromParams: 0.5,
     leverage: 7,
     coin: {
         name: "SOL",
         index: 5,
     },
-    timeframe: "1m"
+    timeframe: "3m"
 
 }
 
