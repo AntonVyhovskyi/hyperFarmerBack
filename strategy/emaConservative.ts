@@ -165,7 +165,7 @@ export const emaConservativeFunction = async (
             console.log(`⛔ Not enough balance to open long position. Required margin: ${nMargin}, Available balance: ${balance}`);
             const newLeverage = Math.ceil(notional / balance);
 
-            if (newLeverage  > 20) {
+            if (newLeverage > 20) {
                 console.log('За велика позиція для данного ризик менеджменту');
                 return
             }
@@ -201,7 +201,7 @@ export const emaConservativeFunction = async (
         if (nMargin > balance) {
             console.log(`⛔ Not enough balance to open short position. Required margin: ${nMargin}, Available balance: ${balance}`);
             const newLeverage = Math.ceil(notional / balance);
-             if (newLeverage  > 20) {
+            if (newLeverage > 20) {
                 console.log('За велика позиція для данного ризик менеджменту');
                 return
             }
@@ -279,57 +279,49 @@ export const emaConservativeFunction = async (
 
     // _____________________________________________________________________________________________
 
+    // -------------------- LONG ------------------------
+
     if (position > 0) {
         // check for close long position
-        if (emaShort < emaLong) {
-            await cancelAllOrdersByInstrument(coin.index, coin.name);
-
-            await closeAllPositions(coin.name, coin.index);
-            position = 0;
-            cashe.trailingActive = false
-            await new Promise(r => setTimeout(r, 5000));
-            await openPositionLogic();
-
-
-            console.log(`Close long position on ${coin.name} due to EMA crossover`);
-
-
-        } else if (!cashe.beActive && !cashe.trailingActive && closes[closes.length - 1] >= cashe.entryPrice * (1 + (bePrc / 100))) {
+        if (!cashe.beActive && !cashe.trailingActive && closes[closes.length - 1] >= cashe.entryPrice * (1 + (bePrc / 100)) &&
+            !(closes[closes.length - 1] >= cashe.entryPrice * (1 + trailStartFromParams / 100))) {
             await cancelAllOrdersByInstrument(coin.index, coin.name);
             await placeStopOrTakeOrder(coin.index, cashe.entryPrice, position.toString(), false, 'sl');
             cashe.slPrice = cashe.entryPrice;
             cashe.beActive = true
             console.log(`Активований беззбтковий стоп ${coin.name} по ціні ${cashe.entryPrice}`);
         } else if (!cashe.trailingActive && (closes[closes.length - 1] >= cashe.entryPrice * (1 + trailStartFromParams / 100))) {
-
-            const newSlPrice = normalizePrice(cashe.slPrice * (1 + trailGapFromParams / 100), cashe.tickSize);
+            const newSlPrice = normalizePrice(closes[closes.length - 1] * (1 - trailGapFromParams / 100), cashe.tickSize);
             cashe.slPrice = newSlPrice;
             await cancelAllOrdersByInstrument(coin.index, coin.name);
             await placeStopOrTakeOrder(coin.index, newSlPrice, position.toString(), false, 'sl');
             console.log(`Activate trailing SL for long position on ${coin.name} at ${cashe.entryPrice}`);
             cashe.trailingActive = true;
-        } else if (cashe.trailingActive && (closes[closes.length - 1] >= cashe.slPrice * (1 + trailGapFromParams / 100))) {
-            const newSlPrice = normalizePrice(cashe.slPrice * (1 + trailGapFromParams / 100), cashe.tickSize);
-            cashe.slPrice = newSlPrice;
-            await cancelAllOrdersByInstrument(coin.index, coin.name);
-            await placeStopOrTakeOrder(coin.index, newSlPrice, position.toString(), false, 'sl');
-            console.log(`Update SL for long position on ${coin.name} to ${newSlPrice}`);
-            cashe.trailingActive = true;
+        } else if (cashe.trailingActive) {
+            const newSlPrice = normalizePrice(closes[closes.length - 1] * (1 - trailGapFromParams / 100), cashe.tickSize);
+            if (newSlPrice > cashe.slPrice) {
+                cashe.slPrice = newSlPrice;
+                await cancelAllOrdersByInstrument(coin.index, coin.name);
+                await placeStopOrTakeOrder(coin.index, newSlPrice, position.toString(), false, 'sl');
+                console.log(`Update SL for long position on ${coin.name} to ${newSlPrice}`);
+                cashe.trailingActive = true;
+            } else {
+                console.log(`Відкрита Позиція ${coin.name}, розмір ${position}, трейлінг ${cashe.trailingActive ? 'активний' : 'неактивний'}. Змін по стопу нема.`);
+            }
+
         } else {
             console.log(`Відкрита Позиція ${coin.name}, розмір ${position}, трейлінг ${cashe.trailingActive ? 'активний' : 'неактивний'}. Змін по стопу нема.`);
 
         }
-    } else if (position < 0) {
+    }
+
+
+    //   ----------- Short -------------- 
+    else if (position < 0) {
         // check for close short position
-        if (emaShort > emaLong) {
-            await cancelAllOrdersByInstrument(coin.index, coin.name);
-            await closeAllPositions(coin.name, coin.index);
-            console.log(`Close short position on ${coin.name} due to EMA crossover`);
-            cashe.trailingActive = false
-            position = 0;
-            await new Promise(r => setTimeout(r, 5000));
-            await openPositionLogic();
-        } else if (!cashe.beActive && !cashe.trailingActive && (closes[closes.length - 1] <= (cashe.entryPrice * (1 - (bePrc / 100))))) {
+        if (!cashe.beActive && !cashe.trailingActive && (closes[closes.length - 1] <= (cashe.entryPrice * (1 - (bePrc / 100))))
+            && !(closes[closes.length - 1] <= cashe.entryPrice * (1 - trailStartFromParams / 100))
+        ) {
             await cancelAllOrdersByInstrument(coin.index, coin.name);
             await placeStopOrTakeOrder(coin.index, cashe.entryPrice, Math.abs(position).toString(), true, 'sl');
             cashe.slPrice = cashe.entryPrice;
@@ -337,17 +329,21 @@ export const emaConservativeFunction = async (
             console.log(`Активований беззбтковий стоп ${coin.name} по ціні ${cashe.entryPrice}`);
         } else if (!cashe.trailingActive && (closes[closes.length - 1] <= cashe.entryPrice * (1 - trailStartFromParams / 100))) {
             await cancelAllOrdersByInstrument(coin.index, coin.name);
-            await placeStopOrTakeOrder(coin.index, cashe.entryPrice, Math.abs(position).toString(), true, 'sl');
-            cashe.slPrice = cashe.entryPrice;
+            const newSlPrice = normalizePrice(closes[closes.length - 1] * (1 + trailGapFromParams / 100), cashe.tickSize, true);
+            await placeStopOrTakeOrder(coin.index, newSlPrice, Math.abs(position).toString(), true, 'sl');
+            cashe.slPrice = newSlPrice;
             console.log(`Activate trailing SL for short position on ${coin.name} at ${cashe.entryPrice}`);
             cashe.trailingActive = true;
-        } else if (cashe.trailingActive && (closes[closes.length - 1] <= cashe.slPrice * (1 - trailGapFromParams / 100))) {
-            const newSlPrice = normalizePrice(cashe.slPrice * (1 - trailGapFromParams / 100), cashe.tickSize);
-            cashe.slPrice = newSlPrice;
-            await cancelAllOrdersByInstrument(coin.index, coin.name);
-            await placeStopOrTakeOrder(coin.index, newSlPrice, Math.abs(position).toString(), true, 'sl');
-            console.log(`Update SL for short position on ${coin.name} to ${newSlPrice}`);
-            cashe.trailingActive = true;
+        } else if (cashe.trailingActive) {
+            const newSlPrice = normalizePrice(closes[closes.length - 1] * (1 + trailGapFromParams / 100), cashe.tickSize, true);
+            if (newSlPrice < cashe.slPrice) {
+                cashe.slPrice = newSlPrice;
+                await cancelAllOrdersByInstrument(coin.index, coin.name);
+                await placeStopOrTakeOrder(coin.index, newSlPrice, Math.abs(position).toString(), true, 'sl');
+                console.log(`Update SL for short position on ${coin.name} to ${newSlPrice}`);
+                cashe.trailingActive = true;
+            } else {console.log(`Відкрита Позиція ${coin.name}, розмір ${position}, трейлінг ${cashe.trailingActive ? 'активний' : 'неактивний'}. Змін по стопу нема.`);}
+
         } else {
             console.log(`Відкрита Позиція ${coin.name}, розмір ${position}, трейлінг ${cashe.trailingActive ? 'активний' : 'неактивний'}. Змін по стопу нема.`);
         }
