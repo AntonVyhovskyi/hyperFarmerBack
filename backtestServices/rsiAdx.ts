@@ -22,6 +22,9 @@ export interface Trade {
     balance?: number;
     leverage?: number;
     exitType?: string;
+    quantity?: number | string;
+    fee?: number;
+    vwap?: number | string;
 }
 
 export interface BacktestResult {

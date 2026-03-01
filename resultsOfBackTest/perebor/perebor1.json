@@ -1,0 +1,349 @@
+{
+    "info": {
+        "description": "Тут був перебор множників для фільтрації по об'єму (Volume). Виведено тільки плюсові результати."
+    },
+	"symbol": "SOLUSDT",
+	"interval": "3m",
+	"period": "lastYear",
+	"baseParams": {
+		"emaShortPeriod": 7,
+		"emaLongPeriod": 25,
+		"atrPeriod": 14,
+		"balanceStart": 1000,
+		"atrRange": 0.5,
+		"atrRange2": 1.2,
+		"atrRange3": 2,
+		"atrPctforSL": 2.5,
+		"riskPct": 1,
+		"riskPct2": 6,
+		"riskPct3": 10,
+		"feeRate": 0.00045,
+		"avarageValuesOfVolumePeriod": 50,
+		"trailStartFromParams": 1,
+		"trailGapFromParams": 0.5,
+		"laverageFromParams": 7
+	},
+	"testedMultipliers": [
+		1,
+		1.1,
+		1.2,
+		1.3,
+		1.4,
+		1.5,
+		1.6,
+		1.7,
+		1.8,
+		1.9,
+		2,
+		2.1,
+		2.2,
+		2.3,
+		2.4,
+		2.5,
+		2.6,
+		2.7,
+		2.8,
+		2.9,
+		3
+	],
+	"results": [
+		{
+			"result": {
+				"total": 398,
+				"wins": 160,
+				"nulls": 0,
+				"losses": 238,
+				"winRate": 40.20100502512563,
+				"profitPct": 115.95645635887387,
+				"winsWithEmaCross": 0,
+				"winsWithStopLoss": 160,
+				"lossesWithEmaCross": 0,
+				"lossesWithStopLoss": 238,
+				"balance": 2159.5645635887386
+			},
+			"params": {
+				"emaShortPeriod": 7,
+				"emaLongPeriod": 25,
+				"atrPeriod": 14,
+				"atrRange": 0.5,
+				"atrPctforSL": 2.5,
+				"riskPct": 1,
+				"laverageFromParams": 7,
+				"trailStartFromParams": 1,
+				"trailGapFromParams": 0.5,
+				"avarageVolumeMultiplier": 2.4
+			}
+		},
+		{
+			"result": {
+				"total": 470,
+				"wins": 191,
+				"nulls": 0,
+				"losses": 279,
+				"winRate": 40.638297872340424,
+				"profitPct": 109.81197238596236,
+				"winsWithEmaCross": 0,
+				"winsWithStopLoss": 191,
+				"lossesWithEmaCross": 0,
+				"lossesWithStopLoss": 279,
+				"balance": 2098.1197238596237
+			},
+			"params": {
+				"emaShortPeriod": 7,
+				"emaLongPeriod": 25,
+				"atrPeriod": 14,
+				"atrRange": 0.5,
+				"atrPctforSL": 2.5,
+				"riskPct": 1,
+				"laverageFromParams": 7,
+				"trailStartFromParams": 1,
+				"trailGapFromParams": 0.5,
+				"avarageVolumeMultiplier": 2.2
+			}
+		},
+		{
+			"result": {
+				"total": 360,
+				"wins": 147,
+				"nulls": 0,
+				"losses": 213,
+				"winRate": 40.833333333333336,
+				"profitPct": 102.28056074485856,
+				"winsWithEmaCross": 0,
+				"winsWithStopLoss": 147,
+				"lossesWithEmaCross": 0,
+				"lossesWithStopLoss": 213,
+				"balance": 2022.8056074485855
+			},
+			"params": {
+				"emaShortPeriod": 7,
+				"emaLongPeriod": 25,
+				"atrPeriod": 14,
+				"atrRange": 0.5,
+				"atrPctforSL": 2.5,
+				"riskPct": 1,
+				"laverageFromParams": 7,
+				"trailStartFromParams": 1,
+				"trailGapFromParams": 0.5,
+				"avarageVolumeMultiplier": 2.5
+			}
+		},
+		{
+			"result": {
+				"total": 429,
+				"wins": 173,
+				"nulls": 0,
+				"losses": 256,
+				"winRate": 40.32634032634033,
+				"profitPct": 99.35332535200988,
+				"winsWithEmaCross": 0,
+				"winsWithStopLoss": 173,
+				"lossesWithEmaCross": 0,
+				"lossesWithStopLoss": 256,
+				"balance": 1993.5332535200987
+			},
+			"params": {
+				"emaShortPeriod": 7,
+				"emaLongPeriod": 25,
+				"atrPeriod": 14,
+				"atrRange": 0.5,
+				"atrPctforSL": 2.5,
+				"riskPct": 1,
+				"laverageFromParams": 7,
+				"trailStartFromParams": 1,
+				"trailGapFromParams": 0.5,
+				"avarageVolumeMultiplier": 2.3
+			}
+		},
+		{
+			"result": {
+				"total": 514,
+				"wins": 204,
+				"nulls": 0,
+				"losses": 310,
+				"winRate": 39.688715953307394,
+				"profitPct": 78.47012228870899,
+				"winsWithEmaCross": 0,
+				"winsWithStopLoss": 204,
+				"lossesWithEmaCross": 0,
+				"lossesWithStopLoss": 310,
+				"balance": 1784.70122288709
+			},
+			"params": {
+				"emaShortPeriod": 7,
+				"emaLongPeriod": 25,
+				"atrPeriod": 14,
+				"atrRange": 0.5,
+				"atrPctforSL": 2.5,
+				"riskPct": 1,
+				"laverageFromParams": 7,
+				"trailStartFromParams": 1,
+				"trailGapFromParams": 0.5,
+				"avarageVolumeMultiplier": 2.1
+			}
+		},
+		{
+			"result": {
+				"total": 315,
+				"wins": 126,
+				"nulls": 0,
+				"losses": 189,
+				"winRate": 40,
+				"profitPct": 72.9815866463592,
+				"winsWithEmaCross": 0,
+				"winsWithStopLoss": 126,
+				"lossesWithEmaCross": 0,
+				"lossesWithStopLoss": 189,
+				"balance": 1729.815866463592
+			},
+			"params": {
+				"emaShortPeriod": 7,
+				"emaLongPeriod": 25,
+				"atrPeriod": 14,
+				"atrRange": 0.5,
+				"atrPctforSL": 2.5,
+				"riskPct": 1,
+				"laverageFromParams": 7,
+				"trailStartFromParams": 1,
+				"trailGapFromParams": 0.5,
+				"avarageVolumeMultiplier": 2.7
+			}
+		},
+		{
+			"result": {
+				"total": 334,
+				"wins": 134,
+				"nulls": 0,
+				"losses": 200,
+				"winRate": 40.119760479041915,
+				"profitPct": 66.4233578144976,
+				"winsWithEmaCross": 0,
+				"winsWithStopLoss": 134,
+				"lossesWithEmaCross": 0,
+				"lossesWithStopLoss": 200,
+				"balance": 1664.233578144976
+			},
+			"params": {
+				"emaShortPeriod": 7,
+				"emaLongPeriod": 25,
+				"atrPeriod": 14,
+				"atrRange": 0.5,
+				"atrPctforSL": 2.5,
+				"riskPct": 1,
+				"laverageFromParams": 7,
+				"trailStartFromParams": 1,
+				"trailGapFromParams": 0.5,
+				"avarageVolumeMultiplier": 2.6
+			}
+		},
+		{
+			"result": {
+				"total": 252,
+				"wins": 102,
+				"nulls": 0,
+				"losses": 150,
+				"winRate": 40.476190476190474,
+				"profitPct": 59.79398082865121,
+				"winsWithEmaCross": 0,
+				"winsWithStopLoss": 102,
+				"lossesWithEmaCross": 0,
+				"lossesWithStopLoss": 150,
+				"balance": 1597.939808286512
+			},
+			"params": {
+				"emaShortPeriod": 7,
+				"emaLongPeriod": 25,
+				"atrPeriod": 14,
+				"atrRange": 0.5,
+				"atrPctforSL": 2.5,
+				"riskPct": 1,
+				"laverageFromParams": 7,
+				"trailStartFromParams": 1,
+				"trailGapFromParams": 0.5,
+				"avarageVolumeMultiplier": 3
+			}
+		},
+		{
+			"result": {
+				"total": 271,
+				"wins": 106,
+				"nulls": 0,
+				"losses": 165,
+				"winRate": 39.11439114391143,
+				"profitPct": 52.35385093362231,
+				"winsWithEmaCross": 0,
+				"winsWithStopLoss": 106,
+				"lossesWithEmaCross": 0,
+				"lossesWithStopLoss": 165,
+				"balance": 1523.5385093362231
+			},
+			"params": {
+				"emaShortPeriod": 7,
+				"emaLongPeriod": 25,
+				"atrPeriod": 14,
+				"atrRange": 0.5,
+				"atrPctforSL": 2.5,
+				"riskPct": 1,
+				"laverageFromParams": 7,
+				"trailStartFromParams": 1,
+				"trailGapFromParams": 0.5,
+				"avarageVolumeMultiplier": 2.9
+			}
+		},
+		{
+			"result": {
+				"total": 290,
+				"wins": 113,
+				"nulls": 0,
+				"losses": 177,
+				"winRate": 38.96551724137931,
+				"profitPct": 39.92277729704288,
+				"winsWithEmaCross": 0,
+				"winsWithStopLoss": 113,
+				"lossesWithEmaCross": 0,
+				"lossesWithStopLoss": 177,
+				"balance": 1399.2277729704288
+			},
+			"params": {
+				"emaShortPeriod": 7,
+				"emaLongPeriod": 25,
+				"atrPeriod": 14,
+				"atrRange": 0.5,
+				"atrPctforSL": 2.5,
+				"riskPct": 1,
+				"laverageFromParams": 7,
+				"trailStartFromParams": 1,
+				"trailGapFromParams": 0.5,
+				"avarageVolumeMultiplier": 2.8
+			}
+		},
+		{
+			"result": {
+				"total": 560,
+				"wins": 216,
+				"nulls": 0,
+				"losses": 344,
+				"winRate": 38.57142857142858,
+				"profitPct": 30.3547497000915,
+				"winsWithEmaCross": 0,
+				"winsWithStopLoss": 216,
+				"lossesWithEmaCross": 0,
+				"lossesWithStopLoss": 344,
+				"balance": 1303.547497000915
+			},
+			"params": {
+				"emaShortPeriod": 7,
+				"emaLongPeriod": 25,
+				"atrPeriod": 14,
+				"atrRange": 0.5,
+				"atrPctforSL": 2.5,
+				"riskPct": 1,
+				"laverageFromParams": 7,
+				"trailStartFromParams": 1,
+				"trailGapFromParams": 0.5,
+				"avarageVolumeMultiplier": 2
+			}
+		}
+	]
+}
+

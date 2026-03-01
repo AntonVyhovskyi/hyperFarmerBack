@@ -1,5 +1,6 @@
 import { Router } from "express";
-import { getCandlesController, runConservativeStrategyController, runConservativeV2StrategyController, runRsiAdxAdaptiveStrateg, runRsiAdxController, runRsiAdxOptimizationController } from "../controllers/backTestController";
+import { getCandlesController, runConservativeStrategyController, runConservativeV2StrategyController, runRsiAdxAdaptiveStrateg, runRsiAdxController, runRsiAdxOptimizationController, runTrendFollowingStrategy } from "../controllers/backTestController";
+import { runConservativeV2VolumeMultiplierGridController } from "../controllers/backTestMultiController";
 
 const router = Router();
 
@@ -10,4 +11,6 @@ router.get("/runRSIADXOpt/:symbol", runRsiAdxOptimizationController);
 router.get("/runRsiAdxAdaptive/:symbol", runRsiAdxAdaptiveStrateg);
 router.get("/runConservative/:symbol", runConservativeStrategyController);
 router.get("/runConservativeV2/:symbol", runConservativeV2StrategyController);
-export default router;
+router.get("/runTrendFollowing/:symbol", runTrendFollowingStrategy);
+router.get("/multipleConservative/:symbol", runConservativeV2VolumeMultiplierGridController);
+export default router;  

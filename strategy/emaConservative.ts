@@ -113,13 +113,10 @@ export const emaConservativeFunction = async (
 
     }
 
-    if (coin.name === "BTC") {
+    if (coin.name === "BTC" || coin.name === "ETH") {
         cashe.tickSize = 0.1;
         cashe.qtySize = 0.001;
-    } else if (coin.name === "ETH") {
-        cashe.tickSize = 0.1;
-        cashe.qtySize = 0.001;
-    } else if (coin.name === "SOL") {
+    }  else if (coin.name === "SOL") {
         cashe.tickSize = 0.01;
         cashe.qtySize = 0.01;
     }

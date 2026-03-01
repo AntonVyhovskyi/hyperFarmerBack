@@ -51,7 +51,7 @@ export function saveCandlesToFile(
   candles: any[],
   periodLabel: string
 ) {
-  const dir = path.join(__dirname, "data", symbol);
+  const dir = path.join(__dirname, "TrendFollowingStrategy/candlesForTheStrategy", symbol);
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 
   const file = path.join(dir, `${symbol}_${interval}_${periodLabel}.json`);
@@ -63,13 +63,13 @@ export function saveCandlesToFile(
 
 
 // (async () => {
-//   const c2023 = await fetchCandlesRange(
+//   const candles = await fetchCandlesRange(
 //     "SOLUSDT",
 //     "3m",
-//     Date.UTC(2023, 0, 1, 0, 0, 0),
-//     Date.UTC(2023, 11, 31, 23, 59, 59)
+//     Date.UTC(2025, 0, 1, 0, 0, 0),
+//     Date.UTC(2025, 11, 20, 23, 59, 59)
 //   );
 
-//   saveCandlesToFile("SOLUSDT", "3m", c2023, "2023");
+//   saveCandlesToFile("SOLUSDT", "3m", candles, "lastYear");
 
 // })();

@@ -1,12 +1,15 @@
+import { IParamsTrendFollowingStrategy } from './../backtestServices/trendFollowingStrategy/candlesForTheStrategy/TrendFollowingStrategy';
+import { ema } from 'technicalindicators';
 import fs from "fs";
 import { Request, Response } from "express";
 import { fetchCandlesRange } from "../backtestServices/getCandles";
 import { saveCandlesToFile } from "../backtestServices/getCandles";
 import { rsiAdxStrategy } from "../backtestServices/rsiAdx";
-import path from 'path';
+import path, { parse } from 'path';
 import { rsiAdxAdaptiveStrategy, type IParamsForAdaptive } from "../backtestServices/rsiAdxAdaptiveStrateg";
 import { conservativeStrategyBacktesting, IParamsForConservative } from "../backtestServices/conservative";
 import { conservativeV2StrategyBacktesting, IParamsForConservativeV2 } from "../backtestServices/conservativeV2";
+import { trendFollowingStrategyBacktesting } from "../backtestServices/trendFollowingStrategy/candlesForTheStrategy/TrendFollowingStrategy";
 
 export const getCandlesController = async (req: Request, res: Response) => {
   try {
@@ -293,15 +296,22 @@ export const runConservativeV2StrategyController = async (req: Request, res: Res
   try {
     const symbol = req.params.symbol.toUpperCase();
     const interval = (req.query.interval as string) || "3m";
-    const period = (req.query.period as string) || "2024";
+    const period = (req.query.period as string) || "lastYear";
     let params: IParamsForConservativeV2 = {
       emaShortPeriod: parseInt(req.query.emaShortPeriod as string) || 7,
       emaLongPeriod: parseInt(req.query.emaLongPeriod as string) || 25,
       atrPeriod: parseInt(req.query.atrPeriod as string) || 14,
       balanceStart: parseFloat(req.query.balanceStart as string) || 1000,
       atrRange: parseFloat(req.query.atrRange as string) || 0.5,
+      atrRange2: parseFloat(req.query.atrRange2 as string) || 1.2,
+      atrRange3: parseFloat(req.query.atrRange3 as string) || 2,
       atrPctforSL: parseFloat(req.query.atrPctforSL as string) || 2.5,
       riskPct: parseFloat(req.query.riskPct as string) || 1,
+      riskPct2: parseFloat(req.query.riskPct2 as string) || 6,
+      riskPct3: parseFloat(req.query.riskPct3 as string) || 10,
+      feeRate: parseFloat(req.query.feeRate as string) || 0.00045,
+      avarageValuesOfVolumePeriod: parseInt(req.query.avarageValuesOfVolumePeriod as string) || 50,
+      avarageVolumeMultiplier: parseFloat(req.query.avarageVolumeMultiplier as string) || 1.8,
 
       trailStartFromParams: 1,
       trailGapFromParams: 0.5,
@@ -322,6 +332,59 @@ export const runConservativeV2StrategyController = async (req: Request, res: Res
     const candles = JSON.parse(fs.readFileSync(file, "utf-8"));
 
     const result = conservativeV2StrategyBacktesting(candles, params);
+
+    return res.json({
+      symbol,
+      interval,
+      params,
+      result,
+    });
+
+
+  } catch (err: any) {
+    console.error("❌ Backtest error:", err);
+    return res.status(500).json({ error: err.message });
+  }
+}
+
+
+export const runTrendFollowingStrategy = async (req: Request, res: Response) => {
+  console.log('is reqest');
+  
+  try {
+    const symbol = req.params.symbol.toUpperCase();
+    const interval = (req.query.interval as string) || "3m";
+    const period = (req.query.period as string) || "lastYear";
+    let params: IParamsTrendFollowingStrategy = {
+      emaShortPeriod: parseInt(req.query.emaShortPeriod as string) || 20,
+      emaLongPeriod: parseInt(req.query.emaLongPeriod as string) || 50,
+      atrPeriod: parseInt(req.query.atrPeriod as string) || 14,
+      balanceStart: parseFloat(req.query.balanceStart as string) || 1000,
+      atrRange: parseFloat(req.query.atrRange as string) || 0.5,
+      atrPctforSL: parseFloat(req.query.atrPctforSL as string) || 3,
+      riskPct: parseFloat(req.query.riskPct as string) || 1,
+      feeRate: parseFloat(req.query.feeRate as string) || 0.0002,
+      emaMostLongPeriod: parseInt(req.query.emaMostLongPeriod as string) || 500,
+
+      trailStartFromParams: parseFloat(req.query.trailStartFromParams as string) || 1,
+      trailGapFromParams: parseFloat(req.query.trailGapFromParams as string) || 0.7,
+      laverageFromParams: parseFloat(req.query.laverageFromParams as string) || 7,
+
+    };
+    const file = path.join(
+      __dirname,
+      "../backtestServices/data",
+      symbol,
+      `${symbol}_${interval}_${period}.json`
+    );
+
+    if (!fs.existsSync(file)) {
+      return res.status(404).json({ error: `File not found: ${file}` });
+    }
+
+    const candles = JSON.parse(fs.readFileSync(file, "utf-8"));
+
+    const result = trendFollowingStrategyBacktesting(candles, params);
 
     return res.json({
       symbol,
